@@ -1,3 +1,10 @@
+import { ParsedUrlQuery } from 'querystring';
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  NextPage,
+} from 'next';
 import Link from 'next/link';
 import { getPostByPath, getPosts } from '@/utils/getPosts';
 import markdownToHtml from '@/utils/markdownToHtml';
@@ -8,7 +15,15 @@ type Props = {
   post: Post;
 };
 
-export default function View(props: Props) {
+type Params = ParsedUrlQuery & {
+  year: string;
+  month: string;
+  slug: string;
+};
+
+const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
+  props: Props,
+) => {
   return (
     <>
       <article>
@@ -23,19 +38,14 @@ export default function View(props: Props) {
       </article>
     </>
   );
-}
-
-type Params = {
-  params: {
-    year: string;
-    month: string;
-    slug: string;
-  };
 };
 
-export const getStaticProps = async ({
-  params: { year, month, slug },
-}: Params) => {
+export default View;
+
+export const getStaticProps: GetStaticProps<Props, Params> = async ({
+  params,
+}) => {
+  const { year, month, slug } = params as Params;
   const path = `${year}/${month}/${slug}.md`;
   const post = getPostByPath(path);
   const content = await markdownToHtml(post.content || '');
@@ -46,12 +56,12 @@ export const getStaticProps = async ({
         ...post.data,
         content,
         description: description(content),
-      },
+      } as Post,
     },
   };
 };
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const paths = getPosts().map(({ year, month, slug }) => ({
     params: {
       year,
