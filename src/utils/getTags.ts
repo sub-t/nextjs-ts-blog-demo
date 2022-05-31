@@ -12,8 +12,9 @@ const contents = (path: string) => {
 
 export const getTags = (category?: string): string[] => {
   const tags = files
-    .flatMap((path) => matter(contents(path)).data.tags)
-    .filter((data) => category === null || data.category === category);
+    .map((path) => matter(contents(path)).data)
+    .filter((data) => category === undefined || data.category === category)
+    .flatMap((data) => data.tags);
 
   return distinct(tags);
 };
