@@ -11,9 +11,11 @@ import { Post } from '@/types';
 import { formatDate } from '@/utils/format';
 import { getCategories } from '@/utils/getCategories';
 import { getPostsByCategory } from '@/utils/getPosts';
+import { getTags } from '@/utils/getTags';
 
 type Props = {
   category: string;
+  tags: string[];
   posts: Post[];
 };
 
@@ -23,6 +25,7 @@ type Params = ParsedUrlQuery & {
 
 const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   category,
+  tags,
   posts,
 }: Props) => {
   return (
@@ -33,6 +36,11 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>{category}</h1>
+      <ul>
+        {tags.map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
@@ -57,6 +65,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   return {
     props: {
       category,
+      tags: getTags(category),
       posts: getPostsByCategory(category),
     },
   };
