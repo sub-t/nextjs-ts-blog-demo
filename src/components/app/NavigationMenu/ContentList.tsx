@@ -101,9 +101,7 @@ export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
           onMouseEnter={() => setHovered(idx)}
         >
           <Link href={href}>
-            <NavigationMenuContentLink
-              css={{ '&:hover': { bgColor: 'transparent' } }}
-            >
+            <NavigationMenuContentLink>
               {icon && <LinkIcon>{icon}</LinkIcon>}
               <LinkBody>
                 <LinkTitle>{title}</LinkTitle>

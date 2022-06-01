@@ -1,4 +1,4 @@
-import { indigo, slate } from '@radix-ui/colors';
+import { indigo } from '@radix-ui/colors';
 import { css } from 'stitches.config';
 
 export const itemStyles = css({
@@ -17,6 +17,5 @@ export const itemStyles = css({
   fontSize: 15,
   color: indigo.indigo12,
 
-  '&:hover': { backgroundColor: slate.slate3 },
   '&:focus': { position: 'relative', boxShadow: `0 0 0 2px ${indigo.indigo7}` },
 });
