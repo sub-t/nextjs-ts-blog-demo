@@ -35,7 +35,7 @@ const StyledList = styled(NavigationMenuPrimitive.List, {
   justifyContent: 'center',
 
   // custom
-  gap: 12,
+  gap: 0,
 });
 
 const StyledIndicator = styled(NavigationMenuPrimitive.Indicator, {

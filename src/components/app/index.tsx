@@ -8,9 +8,9 @@ const Title = styled('h1', {
   userSelect: 'none',
   display: 'flex',
   justifyContent: 'center',
+  mb: 12,
   fontSize: 48,
   fontWeight: 600,
-  letterSpacing: 12,
   color: indigo.indigo12,
 });
 
@@ -35,7 +35,7 @@ export const Header = () => {
         <HStack justify="between">
           <Box></Box>
           <Box>
-            <Title>title</Title>
+            <Title>ブログのタイトル</Title>
             <Menu />
           </Box>
           <Box></Box>
