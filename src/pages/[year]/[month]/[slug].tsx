@@ -3,9 +3,11 @@ import {
   GetStaticPaths,
   GetStaticProps,
   InferGetStaticPropsType,
-  NextPage,
+  NextPageWithLayout,
 } from 'next';
 import Link from 'next/link';
+import { Header } from '@/components/app/Header';
+import { Layout } from '@/components/article/Layout';
 import { getPostByPath, getPosts } from '@/utils/getPosts';
 import markdownToHtml from '@/utils/markdownToHtml';
 import { description } from '@/utils/meta';
@@ -21,9 +23,9 @@ type Params = ParsedUrlQuery & {
   slug: string;
 };
 
-const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
-  props: Props,
-) => {
+const View: NextPageWithLayout<
+  InferGetStaticPropsType<typeof getStaticProps>
+> = (props: Props) => {
   return (
     <>
       <article>
@@ -39,6 +41,13 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
     </>
   );
 };
+
+View.getLayout = (page) => (
+  <>
+    <Header />
+    <Layout>{page}</Layout>
+  </>
+);
 
 export default View;
 

@@ -1,6 +1,7 @@
-import { Header, Layout } from '@/components/app';
+import { Header } from '@/components/app/Header';
+import { Layout } from '@/components/app/Layout';
 import { globalCss } from 'stitches.config';
-import type { AppProps } from 'next/app';
+import type { AppPropsWithLayout } from 'next/app';
 
 const globalStyles = globalCss({
   '*::selection': {
@@ -15,16 +16,19 @@ const globalStyles = globalCss({
   },
 });
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   globalStyles();
-  return (
-    <>
-      <Header />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
-  );
+
+  const getLayout =
+    Component.getLayout ??
+    ((page) => (
+      <>
+        <Header />
+        <Layout>{page}</Layout>
+      </>
+    ));
+
+  return getLayout(<Component {...pageProps} />);
 }
 
 export default MyApp;

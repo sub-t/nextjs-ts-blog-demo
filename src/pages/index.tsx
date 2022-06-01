@@ -27,7 +27,7 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Heading icon={<RiChatNewLine />} text="home">
-        Latest
+        最新の記事
       </Heading>
       <HStack gap="2">
         <Tag text="Next.js" href="/tag/Next.js" />

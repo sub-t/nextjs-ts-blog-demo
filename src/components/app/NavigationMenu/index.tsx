@@ -38,13 +38,18 @@ const contentList: ContentListItem[] = [
 export const Menu = () => {
   return (
     <NavigationMenu>
+      <NavigationMenuLinkItem href="/" internal>
+        ホーム
+      </NavigationMenuLinkItem>
       <NavigationMenuTriggerItem title="カテゴリー">
         <ContentList contentList={contentList} />
       </NavigationMenuTriggerItem>{' '}
       <NavigationMenuTriggerItem title="タグ">
         <ContentList contentList={contentList} />
       </NavigationMenuTriggerItem>
-      <NavigationMenuLinkItem href="/" internal>スニペット</NavigationMenuLinkItem>
+      <NavigationMenuLinkItem href="/" internal>
+        スニペット
+      </NavigationMenuLinkItem>
     </NavigationMenu>
   );
 };
