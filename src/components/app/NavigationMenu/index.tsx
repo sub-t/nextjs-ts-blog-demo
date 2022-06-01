@@ -1,4 +1,5 @@
 import { FaHashtag, FaReact } from 'react-icons/fa';
+import { SiNextdotjs } from 'react-icons/si';
 import { ContentList } from '@/components/app/NavigationMenu/ContentList';
 import { ContentListItem } from '@/components/app/NavigationMenu/types';
 import {
@@ -9,15 +10,15 @@ import {
 
 const contentList: ContentListItem[] = [
   {
-    href: 'https://stites.dev/',
+    href: '/category/React.js',
     icon: <FaReact />,
-    title: 'React',
+    title: 'React.js',
     text: 'JavaScript library for GUI',
   },
   {
-    href: 'https://shes.dev/',
-    icon: <FaReact />,
-    title: 'React',
+    href: '/category/Next.js',
+    icon: <SiNextdotjs />,
+    title: 'Next.js',
     text: 'JavaScript library for GUI',
   },
   {
