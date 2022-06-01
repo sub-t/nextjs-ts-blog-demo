@@ -1,6 +1,15 @@
 import React from 'react';
 import { styled } from 'stitches.config';
 
+const StyledSubHeading = styled('h3', {
+  all: 'unset',
+  marginBottom: 8,
+  fontSize: 18,
+  fontWeight: 900,
+  textTransform: 'uppercase',
+  color: '$violet11',
+});
+
 const StyledHeading = styled('h2', {
   all: 'unset',
   display: 'flex',
@@ -16,18 +25,25 @@ const StyledIcon = styled('span', {
   width: 48,
 });
 
-type HeadingProps = { children: React.ReactNode; icon: React.ReactElement };
+type HeadingProps = {
+  children: React.ReactNode;
+  text: string;
+  icon: React.ReactElement;
+};
 
 export const Heading = React.forwardRef<
   React.ElementRef<typeof StyledHeading>,
   HeadingProps
->(({ children, icon }, forwardedRef) => {
+>(({ children, text, icon }, forwardedRef) => {
   const newIcon = React.cloneElement(icon, { size: 48 });
   return (
-    <StyledHeading ref={forwardedRef}>
-      <StyledIcon>{newIcon}</StyledIcon>
-      {children}
-    </StyledHeading>
+    <>
+      <StyledSubHeading>---- {text} ----</StyledSubHeading>
+      <StyledHeading ref={forwardedRef}>
+        <StyledIcon>{newIcon}</StyledIcon>
+        {children}
+      </StyledHeading>
+    </>
   );
 });
 
