@@ -19,8 +19,8 @@ import {
 } from '@radix-ui/colors';
 
 const customColors = {
-  hiContrast: '$mauve12',
-  loContrast: '$mauve1',
+  hiContrast: '$slate12',
+  loContrast: '$slate1',
 
   shadow1: `0 4px 8px ${blackA.blackA8}`,
   shadow2: `0 8px 16px ${blackA.blackA8}`,

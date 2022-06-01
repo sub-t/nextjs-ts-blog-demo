@@ -26,13 +26,13 @@ const StyledTag = styled('span', {
   color: '$violet11',
 });
 
-type TagProps = { text: string, href: string };
+type TagProps = { text: string; href: string };
 
 export const Tag = React.forwardRef<
   React.ElementRef<typeof StyledTag>,
   TagProps
->(({ text, href }) => (
-  <InnerLink href={href}>
+>(({ text, href }, forwardedRef) => (
+  <InnerLink href={href} ref={forwardedRef}>
     <StyledTag>
       <AiTwotoneTag />
       {text}

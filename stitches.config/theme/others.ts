@@ -1,26 +1,17 @@
-const map = {
-  1: '4px',
-  2: '8px',
-  3: '16px',
-  4: '20px',
-  5: '24px',
-  6: '32px',
-  7: '48px',
-  8: '64px',
-  9: '80px',
-};
-
 export const others = {
   fonts: {
     mono: 'Söhne Mono, menlo, monospace',
   },
-  space: map,
-  sizes: map,
-  radii: {
+  space: {
     1: '4px',
-    2: '6px',
-    3: '8px',
-    full: '9999px',
+    2: '8px',
+    3: '16px',
+    4: '20px',
+    5: '24px',
+    6: '32px',
+    7: '48px',
+    8: '64px',
+    9: '80px',
   },
   zIndices: {
     dropdown: 1000,
