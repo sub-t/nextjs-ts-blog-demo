@@ -8,7 +8,7 @@ import type {
 import Head from 'next/head';
 import Link from 'next/link';
 import { BsHash } from 'react-icons/bs';
-import { Heading } from '@/components/common/Heading';
+import { Heading } from '@/components/app/Heading';
 import { Post } from '@/types';
 import { formatDate } from '@/utils/format';
 import { getPostsByTag } from '@/utils/getPosts';

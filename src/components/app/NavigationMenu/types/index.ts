@@ -1,6 +1,6 @@
 export type ContentListItem = {
   href: string;
-  icon: React.ReactElement;
+  icon?: React.ReactElement;
   title: string;
   text: string;
 };

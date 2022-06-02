@@ -1,13 +1,10 @@
 import { ParsedUrlQuery } from 'querystring';
 import type { NextPage, InferGetStaticPropsType, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import { RiChatNewLine } from 'react-icons/ri';
-import { Heading } from '@/components/common/Heading';
-import { HStack } from '@/components/common/Layout';
-import { Tag } from '@/components/common/Tag';
+import { Heading } from '@/components/app/Heading';
+import { Posts } from '@/components/app/Posts';
 import { Post } from '@/types';
-import { formatDate } from '@/utils/format';
 import { getPosts } from '@/utils/getPosts';
 
 type Props = {
@@ -29,20 +26,7 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <Heading icon={<RiChatNewLine />} text="home">
         最新の記事
       </Heading>
-      <HStack gap="2">
-        <Tag text="Next.js" href="/tag/Next.js" />
-        <Tag text="React.js" href="/tag/React.js" />
-      </HStack>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
-              <a>{post.title}</a>
-            </Link>
-            <div>{formatDate(post.date)}</div>
-          </li>
-        ))}
-      </ul>
+      <Posts posts={posts} />
     </>
   );
 };

@@ -1,6 +1,8 @@
+import React from 'react';
 import { styled } from 'stitches.config';
+import { InnerLink } from '../Link';
 
-export const Badge = styled('span', {
+const StyledBadge = styled('span', {
   userSelect: 'none',
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
@@ -13,56 +15,24 @@ export const Badge = styled('span', {
   WebkitTapHighlightColor: 'transparent',
 
   // custom
-  padding: '4px 5.5px',
+  padding: '4px 8px',
   gap: '$1',
+  border: 'solid 1px currentColor',
+  borderRadius: 4,
   fontVariantNumeric: 'tabular-nums',
   fontWeight: 500,
-
-  variants: {
-    size: {
-      '1': {
-        fontSize: 11,
-      },
-      '2': {
-        fontSize: 12,
-      },
-    },
-    variant: {
-      primary: {
-        backgroundColor: '$violet11',
-        color: '$violet1',
-      },
-      secondary: {
-        backgroundColor: '$indigo11',
-        color: '$indigo1',
-      },
-    },
-    outlined: {
-      true: {},
-    },
-  },
-  compoundVariants: [
-    {
-      outlined: true,
-      variant: 'primary',
-      css: {
-        border: '1px solid $colors$violet11',
-        backgroundColor: '$violet1',
-        color: '$violet11',
-      },
-    },
-    {
-      outlined: true,
-      variant: 'secondary',
-      css: {
-        border: '1px solid $colors$indigo11',
-        backgroundColor: '$indigo1',
-        color: '$indigo11',
-      },
-    },
-  ],
-  defaultVariants: {
-    size: '1',
-    variant: 'violet',
-  },
+  fontSize: 12,
+  color: '$slate1',
+  bgColor: '$slate12',
 });
+
+type BadgeProps = {
+  text: string;
+  href: string;
+};
+
+export const Badge: React.VFC<BadgeProps> = ({ text, href }) => (
+  <InnerLink href={href}>
+    <StyledBadge>{text}</StyledBadge>
+  </InnerLink>
+);

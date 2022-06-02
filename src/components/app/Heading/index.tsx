@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled } from 'stitches.config';
+import { Box } from '../../common/Layout';
 
 const StyledSubHeading = styled('h3', {
   all: 'unset',
@@ -37,13 +38,13 @@ export const Heading = React.forwardRef<
 >(({ children, text, icon }, forwardedRef) => {
   const newIcon = React.cloneElement(icon, { size: 48 });
   return (
-    <>
+    <Box css={{ my: 40 }}>
       <StyledSubHeading>---- {text} ----</StyledSubHeading>
       <StyledHeading ref={forwardedRef}>
         <StyledIcon>{newIcon}</StyledIcon>
         {children}
       </StyledHeading>
-    </>
+    </Box>
   );
 });
 

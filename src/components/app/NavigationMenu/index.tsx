@@ -1,39 +1,11 @@
-import { FaHashtag, FaReact } from 'react-icons/fa';
-import { SiNextdotjs } from 'react-icons/si';
 import { ContentList } from '@/components/app/NavigationMenu/ContentList';
-import { ContentListItem } from '@/components/app/NavigationMenu/types';
 import {
   NavigationMenu,
   NavigationMenuLinkItem,
   NavigationMenuTriggerItem,
 } from '@/components/common/NavigationMenu/index';
-
-const contentList: ContentListItem[] = [
-  {
-    href: '/category/React.js',
-    icon: <FaReact />,
-    title: 'React.js',
-    text: 'JavaScript library for GUI',
-  },
-  {
-    href: '/category/Next.js',
-    icon: <SiNextdotjs />,
-    title: 'Next.js',
-    text: 'JavaScript library for GUI',
-  },
-  {
-    href: 'https://stitch.dev/',
-    icon: <FaHashtag />,
-    title: 'React',
-    text: 'JavaScript library for GUI',
-  },
-  {
-    href: 'https://stitches.dev/',
-    icon: <FaReact />,
-    title: 'React',
-    text: 'JavaScript library for GUI',
-  },
-];
+import { categoryList } from './config/categoryList';
+import { tagList } from './config/tagList';
 
 export const Menu = () => {
   return (
@@ -42,10 +14,10 @@ export const Menu = () => {
         ホーム
       </NavigationMenuLinkItem>
       <NavigationMenuTriggerItem title="カテゴリー">
-        <ContentList contentList={contentList} />
+        <ContentList contentList={categoryList} />
       </NavigationMenuTriggerItem>{' '}
       <NavigationMenuTriggerItem title="タグ">
-        <ContentList contentList={contentList} />
+        <ContentList contentList={tagList} />
       </NavigationMenuTriggerItem>
       <NavigationMenuLinkItem href="/" internal>
         スニペット

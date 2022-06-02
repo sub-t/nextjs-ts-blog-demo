@@ -2,8 +2,10 @@ import React from 'react';
 import { slate, indigo } from '@radix-ui/colors';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { VStack } from '@/components/common/Layout';
 import { NavigationMenuContentLink } from '@/components/common/NavigationMenu/NavigationMenuLink';
 import { styled } from 'stitches.config';
+import { ContentListItem } from './types';
 
 const StyledContentList = styled('ul', {
   all: 'unset',
@@ -48,23 +50,17 @@ const LinkIcon: React.VFC<LinkIconProps> = ({ children }) => {
   return <StyledLinkIcon>{StyledChildren}</StyledLinkIcon>;
 };
 
-const LinkBody = styled('div', {
-  display: 'blog',
-  textAlign: 'left',
-});
-
 const LinkTitle = styled('div', {
-  fontWeight: 500,
+  fontWeight: 900,
   lineHeight: 1.2,
-  marginBottom: 5,
   color: indigo.indigo12,
 });
 
 const LinkText = styled('p', {
   all: 'unset',
-  color: slate.slate11,
   lineHeight: 1.4,
-  fontWeight: 'initial',
+  fontWeight: 500,
+  color: slate.slate11,
 });
 
 const ItemHighlight = styled(motion.div, {
@@ -78,15 +74,8 @@ const ItemHighlight = styled(motion.div, {
   bgColor: '$slateA3',
 });
 
-type ContentListItemType = {
-  href: string;
-  icon: React.ReactElement;
-  title: string;
-  text: string;
-};
-
 type ContentListProps = {
-  contentList: ContentListItemType[];
+  contentList: ContentListItem[];
 };
 
 export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
@@ -103,10 +92,10 @@ export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
           <Link href={href}>
             <NavigationMenuContentLink>
               {icon && <LinkIcon>{icon}</LinkIcon>}
-              <LinkBody>
+              <VStack gap="1">
                 <LinkTitle>{title}</LinkTitle>
                 <LinkText>{text}</LinkText>
-              </LinkBody>
+              </VStack>
             </NavigationMenuContentLink>
           </Link>
           {hovered === idx ? (
