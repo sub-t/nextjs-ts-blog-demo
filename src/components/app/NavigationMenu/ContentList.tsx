@@ -66,10 +66,7 @@ const LinkText = styled('p', {
 const ItemHighlight = styled(motion.div, {
   zIndex: -1,
   position: 'absolute',
-  top: 0,
-  bottom: 0,
-  left: 0,
-  right: 0,
+  inset: 0,
   borderRadius: 6,
   bgColor: '$slateA3',
 });
@@ -79,15 +76,15 @@ type ContentListProps = {
 };
 
 export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
-  const [hovered, setHovered] = React.useState(-1);
+  const [hovered, setHover] = React.useState(-1);
 
   return (
     <StyledContentList layout="two">
       {contentList.map(({ href, icon, title, text }, idx) => (
         <ListItem
           key={idx}
-          onFocus={() => setHovered(idx)}
-          onMouseEnter={() => setHovered(idx)}
+          onFocus={() => setHover(idx)}
+          onMouseEnter={() => setHover(idx)}
         >
           <Link href={href}>
             <NavigationMenuContentLink>

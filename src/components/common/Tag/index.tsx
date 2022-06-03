@@ -26,9 +26,9 @@ const StyledTag = styled('span', {
   color: '$violet11',
 });
 
-type TagProps = { text: string; href: string };
+type Props = { text: string; href: string };
 
-export const Tag: React.VFC<TagProps> = ({ text, href }) => (
+export const Tag: React.VFC<Props> = ({ text, href }) => (
   <InnerLink href={href}>
     <StyledTag>
       <AiTwotoneTag />

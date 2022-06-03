@@ -1,6 +1,6 @@
 import React from 'react';
+import { Box } from '@/components/common/Layout';
 import { styled } from 'stitches.config';
-import { Box } from '../../common/Layout';
 
 const StyledSubHeading = styled('h3', {
   all: 'unset',
@@ -26,7 +26,7 @@ const StyledIcon = styled('span', {
   width: 48,
 });
 
-type HeadingProps = {
+type Props = {
   children: React.ReactNode;
   text: string;
   icon: React.ReactElement;
@@ -34,11 +34,11 @@ type HeadingProps = {
 
 export const Heading = React.forwardRef<
   React.ElementRef<typeof StyledHeading>,
-  HeadingProps
+  Props
 >(({ children, text, icon }, forwardedRef) => {
   const newIcon = React.cloneElement(icon, { size: 48 });
   return (
-    <Box css={{ my: 40 }}>
+    <Box>
       <StyledSubHeading>---- {text} ----</StyledSubHeading>
       <StyledHeading ref={forwardedRef}>
         <StyledIcon>{newIcon}</StyledIcon>

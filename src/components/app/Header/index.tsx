@@ -1,3 +1,4 @@
+import React from 'react';
 import { indigo } from '@radix-ui/colors';
 import { styled } from 'stitches.config';
 import { Box, VStack, HStack } from '../../common/Layout';
@@ -14,9 +15,13 @@ const Title = styled('h1', {
   color: indigo.indigo12,
 });
 
-export const Header = () => {
+type Props = {
+  className?: string;
+};
+
+export const Header: React.VFC<Props> = ({ className }) => {
   return (
-    <VStack align="center" css={{ p: '48px 24px' }}>
+    <VStack className={className} align="center" css={{ p: '48px 24px' }}>
       <Box css={{ boxSizing: 'border-box', w: '100%', maxW: 1264, px: 32 }}>
         <HStack justify="between">
           <Box></Box>

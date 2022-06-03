@@ -1,9 +1,17 @@
 import { ParsedUrlQuery } from 'querystring';
-import type { NextPage, InferGetStaticPropsType, GetStaticProps } from 'next';
+import type {
+  InferGetStaticPropsType,
+  GetStaticProps,
+  NextPageWithLayout,
+} from 'next';
 import Head from 'next/head';
 import { RiChatNewLine } from 'react-icons/ri';
+import { Contents } from '@/components/app/Contents';
+import { Header } from '@/components/app/Header';
 import { Heading } from '@/components/app/Heading';
 import { Posts } from '@/components/app/Posts';
+import { Grid } from '@/components/common/Layout';
+import { Hero } from '@/components/home/Hero';
 import { Post } from '@/types';
 import { getPosts } from '@/utils/getPosts';
 
@@ -13,9 +21,9 @@ type Props = {
 
 type Params = ParsedUrlQuery;
 
-const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  posts,
-}) => {
+const View: NextPageWithLayout<
+  InferGetStaticPropsType<typeof getStaticProps>
+> = ({ posts }) => {
   return (
     <>
       <Head>
@@ -30,6 +38,24 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     </>
   );
 };
+
+View.getLayout = (page) => (
+  <div className='global-layout'>
+    <Grid
+      className="global-layout__header"
+      css={{
+        overflow: 'hidden',
+        gridTemplateRows: 'auto 1fr',
+        gridAutoColumns: 'auto 1fr',
+        h: '100vh',
+      }}
+    >
+      <Header />
+      <Hero />
+    </Grid>
+    <Contents className="global-layout__contents">{page}</Contents>
+  </div>
+);
 
 export default View;
 

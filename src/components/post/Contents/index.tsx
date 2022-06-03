@@ -4,20 +4,19 @@ import { styled } from 'stitches.config';
 const Container = styled('div', {
   boxSizing: 'border-box',
   w: '100%',
-  maxW: 1264,
+  maxW: 784,
   px: 32,
 });
 
-type LayoutProps = {
+type Props = {
   children: React.ReactNode;
+  className: string;
 };
 
-export const Layout: React.VFC<LayoutProps> = ({ children }) => {
+export const Contents: React.VFC<Props> = ({ children, className }) => {
   return (
-    <HStack justify="center" css={{ bgColor: '$mauve3' }}>
-      <Container>
-        {children}
-      </Container>
+    <HStack className={className} justify="center">
+      <Container>{children}</Container>
     </HStack>
   );
 };

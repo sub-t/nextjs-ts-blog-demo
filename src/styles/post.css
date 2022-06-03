@@ -1,0 +1,44 @@
+@import 'prism-themes/themes/prism-vsc-dark-plus.css';
+
+.post {
+  margin: var(--space-4) 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--colors-slate12);
+}
+
+.post a {
+  color: var(--colors-indigo10);
+}
+
+.post h2 {
+  font-size: 32px;
+}
+
+.post ul + p {
+  margin-top: var(--space-4);
+}
+
+.post code {
+  white-space: nowrap;
+  font-family: inherit;
+  margin: 0 2px;
+  padding: 2px 3px;
+  font-size: max(12px, 85%);
+  color: var(--colors-violet11);
+  background-color: var(--colors-violet3);
+}
+
+.remark-highlight pre code {
+  white-space: break-spaces;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: inherit;
+  background-color: transparent;
+}
+
+.remark-highlight pre {
+  padding: 16px !important;
+  border-radius: 6px;
+}

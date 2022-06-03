@@ -1,7 +1,8 @@
+import { Contents } from '@/components/app/Contents';
 import { Header } from '@/components/app/Header';
-import { Layout } from '@/components/app/Layout';
 import { globalCss } from 'stitches.config';
 import type { AppPropsWithLayout } from 'next/app';
+import '@/styles/app.css';
 
 const globalStyles = globalCss({
   '*::selection': {
@@ -9,6 +10,7 @@ const globalStyles = globalCss({
     color: '$violet12',
   },
   body: {
+    bgColor: '$loContrast',
     margin: 0,
     padding: 0,
     fontFamily:
@@ -22,10 +24,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ??
     ((page) => (
-      <>
-        <Header />
-        <Layout>{page}</Layout>
-      </>
+      <div className="global-layout">
+        <Header className="global-layout__header" />
+        <Contents className="global-layout__contents">{page}</Contents>
+      </div>
     ));
 
   return getLayout(<Component {...pageProps} />);

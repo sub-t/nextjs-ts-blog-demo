@@ -2,22 +2,22 @@ import { ContentListItem } from '@/components/app/NavigationMenu/types';
 
 export const tagList: ContentListItem[] = [
   {
-    href: '/category/React.js',
+    href: '/tag/React.js',
     title: 'React.js',
     text: 'JavaScript library',
   },
   {
-    href: '/category/Next.js',
+    href: '/tag/Next.js',
     title: 'Next.js',
     text: 'JavaScript library',
   },
   {
-    href: '/category/Unity',
+    href: '/tag/Unity',
     title: 'Unity',
     text: 'JavaScript library',
   },
   {
-    href: '/category/Java',
+    href: '/tag/Java',
     title: 'Java',
     text: 'JavaScript library',
   },

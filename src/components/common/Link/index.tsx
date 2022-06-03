@@ -6,13 +6,13 @@ const Anchor = styled('a', {
   textDecoration: 'none',
 });
 
-type InnerLinkProps = {
+type Props = {
   href: string;
   as?: string;
   children: React.ReactNode;
 };
 
-export const InnerLink: React.VFC<InnerLinkProps> = ({
+export const InnerLink: React.VFC<Props> = ({
   href,
   as,
   children,

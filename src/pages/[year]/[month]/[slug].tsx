@@ -5,9 +5,11 @@ import {
   InferGetStaticPropsType,
   NextPageWithLayout,
 } from 'next';
-import Link from 'next/link';
 import { Header } from '@/components/app/Header';
-import { Layout } from '@/components/article/Layout';
+import { Date } from '@/components/common/Date';
+import { Contents } from '@/components/post/Contents';
+import { Heading } from '@/components/post/Heading';
+import { PostContent } from '@/components/post/PostContent';
 import { getPostByPath, getPosts } from '@/utils/getPosts';
 import markdownToHtml from '@/utils/markdownToHtml';
 import { description } from '@/utils/meta';
@@ -29,14 +31,9 @@ const View: NextPageWithLayout<
   return (
     <>
       <article>
-        <h1>{props.post.title}</h1>
-        <time>{props.post.date}</time>
-        <div dangerouslySetInnerHTML={{ __html: props.post.content }} />
-        <p className="mt-16 text-center">
-          <Link href="/">
-            <a>home</a>
-          </Link>
-        </p>
+        <Heading>{props.post.title}</Heading>
+        <Date>{props.post.date}</Date>
+        <PostContent content={props.post.content} />
       </article>
     </>
   );
@@ -44,8 +41,8 @@ const View: NextPageWithLayout<
 
 View.getLayout = (page) => (
   <>
-    <Header />
-    <Layout>{page}</Layout>
+    <Header className='global-layout__header' />
+    <Contents className='global-layout__contents'>{page}</Contents>
   </>
 );
 
