@@ -28,11 +28,14 @@ const StyledBadge = styled('span', {
 
 type Props = {
   text: string;
-  href: string;
+  href?: string;
 };
 
-export const Badge: React.VFC<Props> = ({ text, href }) => (
-  <InnerLink href={href}>
+export const Badge: React.VFC<Props> = ({ text, href }) =>
+  href ? (
+    <InnerLink href={href}>
+      <StyledBadge>{text}</StyledBadge>
+    </InnerLink>
+  ) : (
     <StyledBadge>{text}</StyledBadge>
-  </InnerLink>
-);
+  );

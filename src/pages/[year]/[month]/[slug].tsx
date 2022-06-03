@@ -40,10 +40,10 @@ const View: NextPageWithLayout<
 };
 
 View.getLayout = (page) => (
-  <>
+  <div className='global-layout'>
     <Header className='global-layout__header' />
     <Contents className='global-layout__contents'>{page}</Contents>
-  </>
+  </div>
 );
 
 export default View;
