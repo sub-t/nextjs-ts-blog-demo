@@ -1,7 +1,7 @@
 import { basename } from 'path';
 import matter from 'gray-matter';
 import { getContents, getBaseDirectory, getFiles } from './file';
-import { sortByDate } from './sort';
+import { byDate } from './sortHelper';
 import type { Post } from '@/types';
 
 export const getPostByPath = (path: string) => {
@@ -11,7 +11,7 @@ export const getPostByPath = (path: string) => {
 export const getPosts = () => {
   return getFiles()
     .map((path) => mapToPostFromPath(path))
-    .sort((post1, post2) => sortByDate(post1, post2));
+    .sort((post1, post2) => byDate(post1, post2));
 };
 
 const mapToPostFromPath = (path: string): Post => {
