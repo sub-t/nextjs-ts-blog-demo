@@ -85,14 +85,16 @@ const StyledViewport = styled(NavigationMenuPrimitive.Viewport, {
   '@md': {
     width: 640,
   },
+  '@lg': {
+    width: 940,
+  },
   height: 'var(--radix-navigation-menu-viewport-height)',
 
   marginTop: 10,
   backgroundColor: 'white',
   borderRadius: 6,
   overflow: 'hidden',
-  boxShadow:
-    '$colors$shadow2',
+  boxShadow: '$colors$shadow2',
 
   '@media (prefers-reduced-motion: no-preference)': {
     transition: 'width, height, 300ms ease',

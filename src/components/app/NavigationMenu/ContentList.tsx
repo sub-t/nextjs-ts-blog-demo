@@ -15,8 +15,10 @@ const StyledContentList = styled('ul', {
   columnGap: 10,
 
   '@md': {
-    width: 600,
     gridTemplateColumns: 'repeat(2, 1fr)',
+  },
+  '@lg': {
+    gridTemplateColumns: 'repeat(3, 1fr)',
   },
 });
 
@@ -57,7 +59,7 @@ type ContentListProps = {
 
 export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
   return (
-    <HighlightList>
+    <HighlightList id="ContentList">
       <StyledContentList>
         {contentList.map(({ href, icon, title, text }, idx) => (
           <HighlightItem key={idx} id={idx}>
