@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useRef, Suspense } from 'react';
 import {
   Instances,
   Instance,
   Environment,
   ContactShadows,
+  DeviceOrientationControls,
 } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { MathUtils } from 'three';
+import { InstancedMesh, MathUtils, Mesh } from 'three';
 
 const particles = Array.from({ length: 30 }, () => ({
   factor: MathUtils.randInt(20, 100),
@@ -16,7 +18,7 @@ const particles = Array.from({ length: 30 }, () => ({
   zFactor: MathUtils.randFloatSpread(40),
 }));
 
-export default function App() {
+const App = () => {
   return (
     <Canvas
       shadows
@@ -24,9 +26,10 @@ export default function App() {
       gl={{ antialias: false }}
       camera={{ fov: 75, position: [0, 0, 60], near: 10, far: 150 }}
     >
+      <DeviceOrientationControls/>
       <color attach="background" args={['#f0f0f0']} />
       <ambientLight intensity={0.8} />
-      <Bubbles />
+      <Cubes />
       <ContactShadows
         rotation-x={Math.PI / 2}
         position={[0, -35, 0]}
@@ -41,10 +44,13 @@ export default function App() {
       </Suspense>
     </Canvas>
   );
-}
+};
 
-function Bubbles() {
-  const ref = useRef();
+export default App;
+
+const Cubes = () => {
+  const ref = useRef<InstancedMesh>(null!);
+
   useFrame(
     (state, delta) =>
       void (ref.current.rotation.y = MathUtils.damp(
@@ -54,6 +60,7 @@ function Bubbles() {
         delta,
       )),
   );
+
   return (
     <Instances
       limit={particles.length}
@@ -65,14 +72,29 @@ function Bubbles() {
       <boxGeometry args={[3, 3, 3]} />
       <meshStandardMaterial roughness={1} color="#f0f0f0" />
       {particles.map((data, i) => (
-        <Bubble key={i} {...data} />
+        <Cube key={i} {...data} />
       ))}
     </Instances>
   );
 }
 
-function Bubble({ factor, speed, xFactor, yFactor, zFactor }) {
-  const ref = useRef();
+type CubeProps = {
+  factor: number;
+  speed: number;
+  xFactor: number;
+  yFactor: number;
+  zFactor: number;
+};
+
+const Cube: React.VFC<CubeProps> = ({
+  factor,
+  speed,
+  xFactor,
+  yFactor,
+  zFactor,
+}) => {
+  const ref = useRef<Mesh>(null!);
+
   useFrame((state) => {
     const t = factor + state.clock.elapsedTime * (speed / 2);
     ref.current.scale.setScalar(Math.max(1.5, Math.cos(t) * 5));
@@ -94,5 +116,6 @@ function Bubble({ factor, speed, xFactor, yFactor, zFactor }) {
         (Math.sin(t * 3) * factor) / 10,
     );
   });
+
   return <Instance ref={ref} />;
-}
+};

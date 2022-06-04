@@ -7,9 +7,9 @@ const Heading = styled('h2', {
   display: 'block',
   fontWeight: 900,
   fontSize: 56,
+  lineHeight: 1.2,
   color: '$hiContrast',
   textTransform: 'uppercase',
-  letterSpacing: 1.2,
 });
 
 export const Hero = () => {
