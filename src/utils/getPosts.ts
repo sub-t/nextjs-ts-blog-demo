@@ -1,24 +1,15 @@
-import fs from 'fs';
 import { basename } from 'path';
-import glob from 'glob';
 import matter from 'gray-matter';
-import { getBaseDirectory } from './getBaseDirectory';
+import { getContents, getBaseDirectory, getFiles } from './file';
 import { sortByDate } from './sort';
 import type { Post } from '@/types';
 
-const baseDir = getBaseDirectory();
-const files: string[] = glob.sync(`${baseDir}/**/*.md`);
-
-const getContents = (path: string) => {
-  return fs.readFileSync(path, 'utf8');
-};
-
 export const getPostByPath = (path: string) => {
-  return matter(getContents(`${baseDir}/${path}`));
+  return matter(getContents(`${getBaseDirectory()}/${path}`));
 };
 
 export const getPosts = () => {
-  return files
+  return getFiles()
     .map((path) => mapToPostFromPath(path))
     .sort((post1, post2) => sortByDate(post1, post2));
 };
