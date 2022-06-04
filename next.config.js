@@ -78,3 +78,8 @@ module.exports = plugins(
   ],
   nextConfig,
 );
+
+module.exports = {
+  basePath: process.env.GITHUB_ACTIONS ? "/nextjs-ts-blog-demo" : "",
+  trailingSlash: true,
+};
