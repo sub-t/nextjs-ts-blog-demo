@@ -1,4 +1,4 @@
-import type * as Stitches from 'stitches.config';
+import type * as Stitches from '@stitches/react';
 
 export const layout = {
   w: (value: Stitches.PropertyValue<'width'>) => ({
