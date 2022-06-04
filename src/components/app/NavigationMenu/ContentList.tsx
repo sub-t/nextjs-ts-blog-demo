@@ -1,7 +1,7 @@
 import React from 'react';
 import { slate, indigo } from '@radix-ui/colors';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { HighlightItem, HighlightList } from '@/components/animate/Highlight';
 import { VStack } from '@/components/common/Layout';
 import { NavigationMenuContentLink } from '@/components/common/NavigationMenu/NavigationMenuLink';
 import { styled } from 'stitches.config';
@@ -14,26 +14,14 @@ const StyledContentList = styled('ul', {
   padding: 22,
   columnGap: 10,
 
-  variants: {
-    layout: {
-      one: {
-        '@md': {
-          width: 500,
-          gridTemplateColumns: '.75fr 1fr',
-        },
-      },
-      two: {
-        '@md': {
-          width: 600,
-          gridTemplateColumns: 'repeat(2, 1fr)',
-        },
-      },
-    },
+  '@md': {
+    width: 600,
+    gridTemplateColumns: 'repeat(2, 1fr)',
   },
 });
 
 const ListItem = styled('li', {
-  zIndex: 1,
+  all: 'unset',
   position: 'relative',
 });
 
@@ -63,51 +51,30 @@ const LinkText = styled('p', {
   color: slate.slate11,
 });
 
-const ItemHighlight = styled(motion.div, {
-  zIndex: -1,
-  position: 'absolute',
-  inset: 0,
-  borderRadius: 6,
-  bgColor: '$slateA3',
-});
-
 type ContentListProps = {
   contentList: ContentListItem[];
 };
 
 export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
-  const [hovered, setHover] = React.useState(-1);
-
   return (
-    <StyledContentList layout="two">
-      {contentList.map(({ href, icon, title, text }, idx) => (
-        <ListItem
-          key={idx}
-          onFocus={() => setHover(idx)}
-          onMouseEnter={() => setHover(idx)}
-        >
-          <Link href={href}>
-            <NavigationMenuContentLink>
-              {icon && <LinkIcon>{icon}</LinkIcon>}
-              <VStack gap="1">
-                <LinkTitle>{title}</LinkTitle>
-                <LinkText>{text}</LinkText>
-              </VStack>
-            </NavigationMenuContentLink>
-          </Link>
-          {hovered === idx ? (
-            <ItemHighlight
-              transition={{
-                layout: {
-                  duration: 0.2,
-                  ease: 'easeOut',
-                },
-              }}
-              layoutId="highlight"
-            />
-          ) : null}
-        </ListItem>
-      ))}
-    </StyledContentList>
+    <HighlightList>
+      <StyledContentList>
+        {contentList.map(({ href, icon, title, text }, idx) => (
+          <HighlightItem key={idx} id={idx}>
+            <ListItem>
+              <Link href={href}>
+                <NavigationMenuContentLink>
+                  {icon && <LinkIcon>{icon}</LinkIcon>}
+                  <VStack gap="1">
+                    <LinkTitle>{title}</LinkTitle>
+                    <LinkText>{text}</LinkText>
+                  </VStack>
+                </NavigationMenuContentLink>
+              </Link>
+            </ListItem>
+          </HighlightItem>
+        ))}
+      </StyledContentList>
+    </HighlightList>
   );
 };

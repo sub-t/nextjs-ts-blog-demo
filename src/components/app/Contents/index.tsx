@@ -2,7 +2,7 @@ import { HStack, VStack } from '@/components/common/Layout';
 
 type Props = {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 };
 
 export const Contents: React.VFC<Props> = ({ children, className }) => {

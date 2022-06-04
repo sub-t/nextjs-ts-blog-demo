@@ -14,7 +14,7 @@ const Image = styled('img', {
 
 export const Hero = () => {
   return (
-    <VStack align="center" css={{ bgColor: '$slate12' }}>
+    <VStack align="center" css={{ zIndex: -1, position: 'absolute', inset: 0, bgColor: '$slate3' }}>
       <ImageWrapper>
         <Image
           src="/assets/Under Constructions_Flatline.png"
