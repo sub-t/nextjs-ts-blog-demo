@@ -15,7 +15,7 @@ const StyledBadge = styled('span', {
   WebkitTapHighlightColor: 'transparent',
 
   // custom
-  padding: '4px 8px',
+  padding: '4px 10px',
   gap: '$1',
   border: 'solid 1px currentColor',
   borderRadius: 4,
