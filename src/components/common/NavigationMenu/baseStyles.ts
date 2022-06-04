@@ -1,4 +1,3 @@
-import { indigo } from '@radix-ui/colors';
 import { css } from 'stitches.config';
 
 export const itemStyles = css({
@@ -15,7 +14,10 @@ export const itemStyles = css({
   borderRadius: 9999,
   fontWeight: 900,
   fontSize: 15,
-  color: indigo.indigo12,
+  color: '$hiContrast',
 
-  '&:focus': { position: 'relative', boxShadow: `0 0 0 2px ${indigo.indigo7}` },
+  '&:focus': {
+    position: 'relative',
+    boxShadow: '0 0 0 2px $colors$hiContrast',
+  },
 });

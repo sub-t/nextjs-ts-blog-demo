@@ -1,5 +1,4 @@
 import React from 'react';
-import { indigo } from '@radix-ui/colors';
 import { CaretDownIcon } from '@radix-ui/react-icons';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { styled, keyframes } from 'stitches.config';
@@ -24,7 +23,7 @@ const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, itemStyles, {
 
 const StyledCaret = styled(CaretDownIcon, {
   position: 'relative',
-  color: indigo.indigo12,
+  color: '$hiContrast',
   top: 1,
   '[data-state=open] &': { transform: 'rotate(-180deg)' },
   '@media (prefers-reduced-motion: no-preference)': {

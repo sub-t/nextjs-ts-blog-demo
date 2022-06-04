@@ -1,5 +1,4 @@
 import React from 'react';
-import { indigo } from '@radix-ui/colors';
 import { styled } from 'stitches.config';
 import { Box, VStack, HStack } from '../../common/Layout';
 import { Menu } from '../NavigationMenu';
@@ -12,7 +11,7 @@ const Title = styled('h1', {
   mb: 12,
   fontSize: 48,
   fontWeight: 600,
-  color: indigo.indigo12,
+  color: '$hiContrast',
 });
 
 type Props = {

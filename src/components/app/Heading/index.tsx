@@ -17,7 +17,7 @@ const StyledHeading = styled('h2', {
   gap: '$2',
   fontSize: 40,
   fontWeight: 900,
-  color: '$indigo12',
+  color: '$hiContrast',
 });
 
 const StyledIcon = styled('span', {

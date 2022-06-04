@@ -2,20 +2,16 @@ import {
   mauve,
   slate,
   violet,
-  indigo,
   mauveA,
   slateA,
   violetA,
-  indigoA,
   blackA,
   mauveDark,
   slateDark,
   violetDark,
-  indigoDark,
   mauveDarkA,
   slateDarkA,
   violetDarkA,
-  indigoDarkA,
 } from '@radix-ui/colors';
 
 const customColors = {
@@ -30,12 +26,10 @@ export const colors = {
   ...customColors,
 
   ...violet,
-  ...indigo,
   ...mauve,
   ...slate,
 
   ...violetA,
-  ...indigoA,
   ...mauveA,
   ...slateA,
 };
@@ -45,12 +39,10 @@ export const darkThemeConfig = {
     ...customColors,
 
     ...violetDark,
-    ...indigoDark,
     ...mauveDark,
     ...slateDark,
 
     ...violetDarkA,
-    ...indigoDarkA,
     ...mauveDarkA,
     ...slateDarkA,
   },

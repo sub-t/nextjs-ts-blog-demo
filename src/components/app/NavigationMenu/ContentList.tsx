@@ -1,5 +1,4 @@
 import React from 'react';
-import { slate, indigo } from '@radix-ui/colors';
 import Link from 'next/link';
 import { HighlightItem, HighlightList } from '@/components/animate/Highlight';
 import { VStack } from '@/components/common/Layout';
@@ -43,14 +42,14 @@ const LinkIcon: React.VFC<LinkIconProps> = ({ children }) => {
 const LinkTitle = styled('div', {
   fontWeight: 900,
   lineHeight: 1.2,
-  color: indigo.indigo12,
+  color: '$hiContrast',
 });
 
 const LinkText = styled('p', {
   all: 'unset',
   lineHeight: 1.4,
   fontWeight: 500,
-  color: slate.slate11,
+  color: '$slate11',
 });
 
 type ContentListProps = {
