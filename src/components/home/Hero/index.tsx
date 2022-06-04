@@ -1,26 +1,37 @@
-import { VStack } from '@/components/common/Layout';
+import { VStack, Box } from '@/components/common/Layout';
 import { styled } from 'stitches.config';
+import App from './View';
 
-const ImageWrapper = styled('figure', {
-  flex: 1,
-  overflow: 'hidden',
-});
-
-const Image = styled('img', {
-  w: '100%',
-  h: '100%',
-  objectFit: 'contain',
+const Heading = styled('h2', {
+  all: 'unset',
+  display: 'block',
+  fontWeight: 900,
+  fontSize: 56,
+  color: '$hiContrast',
+  textTransform: 'uppercase',
+  letterSpacing: 1.2,
 });
 
 export const Hero = () => {
   return (
-    <VStack align="center" css={{ zIndex: -1, position: 'absolute', inset: 0, bgColor: '$slate3' }}>
-      <ImageWrapper>
-        <Image
-          src="/assets/Under Constructions_Flatline.png"
-          alt="under construction"
-        />
-      </ImageWrapper>
+    <VStack align="center" css={{}}>
+      <Box css={{ position: 'relative', flex: 1, width: '100vw' }}>
+        <App />
+        <Box
+          css={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate3d(-50%, -50%, 0)',
+          }}
+        >
+          <Heading>
+            under
+            <br />
+            construction
+          </Heading>
+        </Box>
+      </Box>
     </VStack>
   );
 };

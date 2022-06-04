@@ -10,7 +10,7 @@ import { Contents } from '@/components/app/Contents';
 import { Header } from '@/components/app/Header';
 import { Heading } from '@/components/app/Heading';
 import { Posts } from '@/components/app/Posts';
-import { Box } from '@/components/common/Layout';
+import { Grid } from '@/components/common/Layout';
 import { Hero } from '@/components/home/Hero';
 import { Post } from '@/types';
 import { getPosts } from '@/utils/getPosts';
@@ -41,15 +41,17 @@ const View: NextPageWithLayout<
 
 View.getLayout = (page) => (
   <div className="global-layout">
-    <Box
+    <Grid
       className="global-layout__header"
       css={{
+        overflow: 'hidden',
         h: '100vh',
+        gridTemplateRows: 'auto 1fr',
       }}
     >
       <Header />
       <Hero />
-    </Box>
+    </Grid>
     <Contents className="global-layout__contents">{page}</Contents>
   </div>
 );

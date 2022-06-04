@@ -112,5 +112,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': ['off'],
 
     "react/prop-types": "off",
+    "@typescript-eslint/no-var-requires": "off"
   },
 };
