@@ -44,8 +44,7 @@ View.getLayout = (page) => (
     <Grid
       className="global-layout__header"
       css={{
-        overflow: 'hidden',
-        h: '100vh',
+        h: 'max(100%, 100vh)',
         gridTemplateRows: 'auto 1fr',
       }}
     >

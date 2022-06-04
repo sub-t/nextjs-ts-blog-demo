@@ -14,7 +14,7 @@ const Heading = styled('h2', {
 
 export const Hero = () => {
   return (
-    <VStack align="center" css={{}}>
+    <VStack align="center" css={{ overflow: 'hidden' }}>
       <Box css={{ position: 'relative', flex: 1, width: '100vw' }}>
         <App />
         <Box
