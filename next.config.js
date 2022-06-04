@@ -77,8 +77,9 @@ module.exports = plugins(
     withBundleAnalyzer,
   ],
   nextConfig,
-  {
-    basePath: process.env.GITHUB_ACTIONS ? '/nextjs-ts-blog-demo' : '',
-    trailingSlash: true,
-  },
 );
+
+module.exports = {
+  basePath: process.env.GITHUB_ACTIONS ? "/nextjs-ts-blog-demo" : "",
+  trailingSlash: true,
+};
