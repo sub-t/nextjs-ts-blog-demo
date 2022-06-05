@@ -4,7 +4,6 @@ import {
   Instance,
   Environment,
   ContactShadows,
-  DeviceOrientationControls,
 } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { MathUtils } from 'three';
@@ -25,7 +24,6 @@ const App = () => {
       gl={{ antialias: false }}
       camera={{ fov: 75, position: [0, 0, 60], near: 10, far: 150 }}
     >
-      <DeviceOrientationControls />
       <color attach="background" args={['#f0f0f0']} />
       <ambientLight intensity={0.8} />
       <Cubes />
