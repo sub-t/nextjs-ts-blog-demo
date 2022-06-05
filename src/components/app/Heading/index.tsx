@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@/components/common/Layout';
 import { styled } from 'stitches.config';
 
-const StyledSubHeading = styled('span', {
+const StyledSubHeading = styled('h3', {
   all: 'unset',
   marginBottom: 8,
   fontSize: 18,
