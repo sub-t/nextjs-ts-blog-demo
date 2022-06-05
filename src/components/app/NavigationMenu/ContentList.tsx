@@ -64,7 +64,7 @@ export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
           <HighlightItem key={idx} id={idx}>
             <ListItem>
               <Link href={href}>
-                <NavigationMenuContentLink>
+                <NavigationMenuContentLink asChild>
                   {icon && <LinkIcon>{icon}</LinkIcon>}
                   <VStack gap="1">
                     <LinkTitle>{title}</LinkTitle>

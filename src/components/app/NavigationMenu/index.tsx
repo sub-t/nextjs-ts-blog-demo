@@ -13,7 +13,7 @@ export const Menu = () => {
     <HighlightList id="NavigationMenu">
       <NavigationMenu>
         <HighlightItem id={0} css={{ borderRadius: 9999 }}>
-          <NavigationMenuLinkItem href="/" internal>
+          <NavigationMenuLinkItem href="/">
             ホーム
           </NavigationMenuLinkItem>
         </HighlightItem>

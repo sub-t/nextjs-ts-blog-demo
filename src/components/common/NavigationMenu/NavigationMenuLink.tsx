@@ -38,7 +38,7 @@ export const NavigationMenuLinkItem = React.forwardRef<
 >(({ children, href }, forwardedRef) => (
   <StyledNavigationMenuItem ref={forwardedRef}>
     <Link href={href}>
-      <NavigationMenuLink>{children}</NavigationMenuLink>
+      <NavigationMenuLink asChild>{children}</NavigationMenuLink>
     </Link>
   </StyledNavigationMenuItem>
 ));
