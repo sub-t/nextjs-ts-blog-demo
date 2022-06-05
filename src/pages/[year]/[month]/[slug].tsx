@@ -38,7 +38,6 @@ const View: NextPageWithLayout<
     title,
     date,
     category,
-    tags,
     year,
     month,
     slug,
