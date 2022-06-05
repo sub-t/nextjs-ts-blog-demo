@@ -28,6 +28,7 @@ const View: NextPageWithLayout<
   return (
     <>
       <Head>
+        <title>blog</title>
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:title" content={APP_NAME} />
         <meta property="og:description" content={APP_DESCRIPTION} />

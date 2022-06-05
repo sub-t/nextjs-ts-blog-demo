@@ -30,6 +30,7 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <>
       <Head>
+        <title>{tag}の記事</title>
         <meta name="description" content={APP_DESCRIPTION} />
         <meta property="og:title" content={APP_NAME} />
         <meta property="og:description" content={APP_DESCRIPTION} />

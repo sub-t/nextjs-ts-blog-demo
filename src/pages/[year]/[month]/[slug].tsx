@@ -33,20 +33,13 @@ type Params = ParsedUrlQuery & {
 const View: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ post }) => {
-  const {
-    description,
-    title,
-    date,
-    category,
-    year,
-    month,
-    slug,
-    content,
-  } = post;
+  const { description, title, date, category, year, month, slug, content } =
+    post;
 
   return (
     <>
       <Head>
+        <title>{title}</title>
         <meta name="description" content={description} />
         <meta property="og:title" content={`${title} ･ ${APP_NAME}`} />
         <meta property="og:description" content={description} />
