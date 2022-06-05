@@ -15,7 +15,7 @@ const StyledHeading = styled('h2', {
   all: 'unset',
   display: 'flex',
   gap: '$2',
-  fontSize: 40,
+  fontSize: 32,
   fontWeight: 900,
   color: '$hiContrast',
 });

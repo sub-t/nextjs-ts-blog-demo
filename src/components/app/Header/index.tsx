@@ -9,7 +9,7 @@ const Title = styled('h1', {
   display: 'flex',
   justifyContent: 'center',
   mb: 12,
-  fontSize: 48,
+  fontSize: 40,
   fontWeight: 600,
   color: '$hiContrast',
 });
@@ -21,7 +21,7 @@ type Props = {
 export const Header: React.VFC<Props> = ({ className }) => {
   return (
     <VStack className={className} align="center" css={{ p: '48px 24px' }}>
-      <Box css={{ boxSizing: 'border-box', w: '100%', maxW: 1264, px: 32 }}>
+      <Box css={{ boxSizing: 'border-box', w: '100%', maxW: 1200 }}>
         <HStack justify="between">
           <Box></Box>
           <Box>

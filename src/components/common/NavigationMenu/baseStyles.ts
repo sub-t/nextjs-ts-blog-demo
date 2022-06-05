@@ -5,6 +5,7 @@ export const itemStyles = css({
   outline: 'none',
   userSelect: 'none',
   lineHeight: 1,
+  whiteSpace: 'nowrap',
   display: 'flex',
   alignItems: 'center',
   cursor: 'pointer',

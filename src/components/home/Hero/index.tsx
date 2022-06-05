@@ -6,7 +6,10 @@ const Heading = styled('h2', {
   all: 'unset',
   display: 'block',
   fontWeight: 900,
-  fontSize: 56,
+  fontSize: 40,
+  '@sm': {
+    fontSize: 56,
+  },
   lineHeight: 1.2,
   color: '$hiContrast',
   textTransform: 'uppercase',
