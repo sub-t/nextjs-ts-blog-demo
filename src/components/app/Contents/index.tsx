@@ -9,12 +9,13 @@ export const Contents: React.VFC<Props> = ({ children, className }) => {
   return (
     <HStack className={className} justify="center">
       <VStack
-        gap="4"
+        gap="6"
         css={{
           boxSizing: 'border-box',
           w: '100%',
           maxW: 1264,
-          px: 32,
+          mx: 32,
+          mt: 48,
         }}
       >
         {children}

@@ -61,9 +61,9 @@ export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
     <HighlightList id="ContentList">
       <StyledContentList>
         {contentList.map(({ href, icon, title, text }, idx) => (
-          <HighlightItem key={idx} id={idx}>
-            <ListItem>
-              <Link href={href}>
+          <ListItem key={idx}>
+            <HighlightItem id={idx}>
+              <Link href={href} passHref>
                 <NavigationMenuContentLink>
                   {icon && <LinkIcon>{icon}</LinkIcon>}
                   <VStack gap="1">
@@ -72,8 +72,8 @@ export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
                   </VStack>
                 </NavigationMenuContentLink>
               </Link>
-            </ListItem>
-          </HighlightItem>
+            </HighlightItem>
+          </ListItem>
         ))}
       </StyledContentList>
     </HighlightList>

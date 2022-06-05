@@ -5,7 +5,8 @@ const Container = styled('div', {
   boxSizing: 'border-box',
   w: '100%',
   maxW: 784,
-  px: 32,
+  mx: 32,
+  mt: 48,
 });
 
 type Props = {

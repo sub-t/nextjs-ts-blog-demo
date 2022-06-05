@@ -8,7 +8,6 @@ const Title = styled('h1', {
   userSelect: 'none',
   display: 'flex',
   justifyContent: 'center',
-  mb: 12,
   fontSize: 40,
   fontWeight: 600,
   color: '$hiContrast',
@@ -24,10 +23,10 @@ export const Header: React.VFC<Props> = ({ className }) => {
       <Box css={{ boxSizing: 'border-box', w: '100%', maxW: 1200 }}>
         <HStack justify="between">
           <Box></Box>
-          <Box>
+          <VStack gap='2'>
             <Title>ブログのタイトル</Title>
             <Menu />
-          </Box>
+          </VStack>
           <Box></Box>
         </HStack>
       </Box>

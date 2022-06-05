@@ -10,7 +10,7 @@ const Heading = styled('h2', {
   '@sm': {
     fontSize: 56,
   },
-  lineHeight: 1.2,
+  lineHeight: 1.1,
   color: '$hiContrast',
   textTransform: 'uppercase',
 });
@@ -29,6 +29,8 @@ export const Hero = () => {
           }}
         >
           <Heading>
+            website
+            <br/>
             under
             <br />
             construction

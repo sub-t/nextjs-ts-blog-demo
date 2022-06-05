@@ -9,7 +9,8 @@ import Head from 'next/head';
 import { Header } from '@/components/app/Header';
 import { Badge } from '@/components/common/Badge';
 import { Date } from '@/components/common/Date';
-import { HStack } from '@/components/common/Layout';
+import { HStack, VStack, Wrap } from '@/components/common/Layout';
+import { Tag } from '@/components/common/Tag';
 import { Contents } from '@/components/post/Contents';
 import { Heading } from '@/components/post/Heading';
 import { PostContent } from '@/components/post/PostContent';
@@ -33,8 +34,17 @@ type Params = ParsedUrlQuery & {
 const View: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ post }) => {
-  const { description, title, date, category, year, month, slug, content } =
-    post;
+  const {
+    description,
+    title,
+    date,
+    tags,
+    category,
+    year,
+    month,
+    slug,
+    content,
+  } = post;
 
   return (
     <>
@@ -49,11 +59,20 @@ const View: NextPageWithLayout<
         />
       </Head>
       <article>
-        <Heading>{title}</Heading>
-        <HStack align="center" gap="3">
-          <Date>{formatDate(date)}</Date>
-          <Badge text={category} href={`/category/${category}`} />
-        </HStack>
+        <VStack gap="5">
+          <VStack gap="3">
+            <HStack align="center" gap="3">
+              <Date>{formatDate(date)}</Date>
+              <Badge text={category} href={`/category/${category}/`} />
+            </HStack>
+            <Heading>{title}</Heading>
+          </VStack>
+          <Wrap align="center" gap="2">
+            {tags.map((tag) => (
+              <Tag key={tag} text={tag} href={`/tag/${tag}/`} />
+            ))}
+          </Wrap>
+        </VStack>
         <PostContent content={content} />
       </article>
     </>

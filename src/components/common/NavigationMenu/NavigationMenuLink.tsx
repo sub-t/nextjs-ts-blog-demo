@@ -17,29 +17,25 @@ export const NavigationMenuContentLink = styled(
   },
 );
 
-export const NavigationMenuLink = styled(
-  NavigationMenuPrimitive.Link,
-  itemStyles,
-  {
-    textDecoration: 'none',
-  },
-);
+const NavigationMenuLink = styled(NavigationMenuPrimitive.Link, itemStyles, {
+  textDecoration: 'none',
+});
 
 const StyledNavigationMenuItem = styled(NavigationMenuPrimitive.Item, {});
 
 type NavigationMenuLinkItemProps = {
   children: React.ReactNode;
   href: string;
-  internal: boolean;
+  inner: boolean;
 };
 
 export const NavigationMenuLinkItem = React.forwardRef<
   React.ElementRef<typeof StyledNavigationMenuItem>,
   NavigationMenuLinkItemProps
->(({ children, href, internal }, forwardedRef) => (
+>(({ children, href, inner }, forwardedRef) => (
   <StyledNavigationMenuItem ref={forwardedRef}>
-    {internal ? (
-      <Link href={href}>
+    {inner ? (
+      <Link href={href} passHref>
         <NavigationMenuLink>{children}</NavigationMenuLink>
       </Link>
     ) : (

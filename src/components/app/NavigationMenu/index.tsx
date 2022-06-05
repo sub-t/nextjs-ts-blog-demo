@@ -1,4 +1,3 @@
-import { HighlightItem, HighlightList } from '@/components/animate/Highlight';
 import { ContentList } from '@/components/app/NavigationMenu/ContentList';
 import {
   NavigationMenu,
@@ -10,24 +9,16 @@ import { tagList } from './config/tagList';
 
 export const Menu = () => {
   return (
-    <HighlightList id="NavigationMenu">
-      <NavigationMenu>
-        <HighlightItem id={0} css={{ borderRadius: 9999 }}>
-          <NavigationMenuLinkItem href="/" internal>
-            ホーム
-          </NavigationMenuLinkItem>
-        </HighlightItem>
-        <HighlightItem id={1} css={{ borderRadius: 9999 }}>
-          <NavigationMenuTriggerItem title="カテゴリー">
-            <ContentList contentList={categoryList} />
-          </NavigationMenuTriggerItem>
-        </HighlightItem>
-        <HighlightItem id={2} css={{ borderRadius: 9999 }}>
-          <NavigationMenuTriggerItem title="タグ">
-            <ContentList contentList={tagList} />
-          </NavigationMenuTriggerItem>
-        </HighlightItem>
-      </NavigationMenu>
-    </HighlightList>
+    <NavigationMenu>
+      <NavigationMenuLinkItem href="/" inner>
+        ホーム
+      </NavigationMenuLinkItem>
+      <NavigationMenuTriggerItem title="カテゴリー">
+        <ContentList contentList={categoryList} />
+      </NavigationMenuTriggerItem>
+      <NavigationMenuTriggerItem title="タグ">
+        <ContentList contentList={tagList} />
+      </NavigationMenuTriggerItem>
+    </NavigationMenu>
   );
 };
