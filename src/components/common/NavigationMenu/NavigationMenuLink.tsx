@@ -30,16 +30,21 @@ const StyledNavigationMenuItem = styled(NavigationMenuPrimitive.Item, {});
 type NavigationMenuLinkItemProps = {
   children: React.ReactNode;
   href: string;
+  internal: boolean;
 };
 
 export const NavigationMenuLinkItem = React.forwardRef<
   React.ElementRef<typeof StyledNavigationMenuItem>,
   NavigationMenuLinkItemProps
->(({ children, href }, forwardedRef) => (
+>(({ children, href, internal }, forwardedRef) => (
   <StyledNavigationMenuItem ref={forwardedRef}>
-    <Link href={href}>
-      <NavigationMenuLink>{children}</NavigationMenuLink>
-    </Link>
+    {internal ? (
+      <Link href={href}>
+        <NavigationMenuLink>{children}</NavigationMenuLink>
+      </Link>
+    ) : (
+      <NavigationMenuLink href={href}>{children}</NavigationMenuLink>
+    )}
   </StyledNavigationMenuItem>
 ));
 
