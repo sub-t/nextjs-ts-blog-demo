@@ -4,8 +4,8 @@ import { Wrap } from '@/components/common/Layout';
 
 export const IconGroup = () => (
   <Wrap gap="2">
-    <IconButton icon={<FaGithub />} />
-    <IconButton icon={<FaTwitter />} />
-    <IconButton icon={<FaInstagram />} />
+    <IconButton type="button" aria-label="github" icon={<FaGithub />} />
+    <IconButton type="button" aria-label="twitter" icon={<FaTwitter />} />
+    <IconButton type="button" aria-label="instagram" icon={<FaInstagram />} />
   </Wrap>
 );

@@ -6,51 +6,17 @@ export const NavigationBar = styled('nav', {
   width: '100%',
 });
 
-export const NavigationBarList = styled('li', {
+export const NavigationBarList = styled('ul', {
   all: 'unset',
 });
 
-export const NavigationBarSeparator = styled('div', {
-  // custom
-  height: 1,
-  margin: 4,
-  backgroundColor: '$violet6',
-});
-
-const StyledNavigationBarIcon = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-
-  // custom
-  width: 28,
-  height: 28,
-});
-
-type Props = React.ComponentPropsWithoutRef<typeof StyledNavigationBarIcon> & {
-  icon: React.ReactElement;
-};
-
-export const NavigationBarIcon = React.forwardRef<
-  React.ElementRef<typeof StyledNavigationBarIcon>,
-  Props
->(({ icon, ...props }, forwardedRef) => {
-  const newIcon = React.cloneElement(icon, { size: 99 });
-  return (
-    <StyledNavigationBarIcon {...props} ref={forwardedRef}>
-      {newIcon}
-    </StyledNavigationBarIcon>
-  );
-});
-
-NavigationBarIcon.displayName = 'NavigationBarIcon';
-
-const baseItemCss = css({
+const baseLinkCss = css({
   boxSizing: 'border-box',
   userSelect: 'none',
   overflow: 'hidden',
   display: 'flex',
   alignItems: 'center',
+  alignLinks: 'center',
   fontFamily: '$untitled',
   lineHeight: 1,
   cursor: 'pointer',
@@ -64,13 +30,13 @@ const baseItemCss = css({
   fontVariantNumeric: 'tabular-nums',
 });
 
-export const NavigationBarLabel = styled('div', baseItemCss, {
+export const NavigationBarLabel = styled('div', baseLinkCss, {
   // custom
   color: '$mauve11',
   my: '$2',
 });
 
-const StyledNavigationBarItem = styled('div', baseItemCss, {
+const StyledNavigationBarLink = styled('a', baseLinkCss, {
   textDecoration: 'none',
 
   // custom
@@ -89,19 +55,19 @@ const StyledNavigationBarItem = styled('div', baseItemCss, {
   },
 });
 
-type NavigationBarItemProps = React.ComponentPropsWithoutRef<
-  typeof StyledNavigationBarItem
+type NavigationBarLinkProps = React.ComponentPropsWithoutRef<
+  typeof StyledNavigationBarLink
 > & {
   css?: CSS;
 };
 
-export const NavigationBarItem = React.forwardRef<
-  React.ElementRef<typeof StyledNavigationBarItem>,
-  NavigationBarItemProps
+export const NavigationBarLink = React.forwardRef<
+  React.ElementRef<typeof StyledNavigationBarLink>,
+  NavigationBarLinkProps
 >(({ children, ...props }, forwardedRef) => (
-  <StyledNavigationBarItem {...props} ref={forwardedRef}>
+  <StyledNavigationBarLink {...props} ref={forwardedRef}>
     {children}
-  </StyledNavigationBarItem>
+  </StyledNavigationBarLink>
 ));
 
-NavigationBarItem.displayName = 'NavigationBarItem';
+NavigationBarLink.displayName = 'NavigationBarLink';

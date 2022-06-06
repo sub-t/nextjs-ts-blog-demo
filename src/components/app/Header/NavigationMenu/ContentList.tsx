@@ -4,6 +4,7 @@ import { HighlightItem, HighlightList } from '@/components/animate/Highlight';
 import { VStack } from '@/components/common/Layout';
 import { NavigationMenuContentLink } from '@/components/common/NavigationMenu/NavigationMenuLink';
 import { styled } from 'stitches.config';
+import { LinkIcon, LinkText, LinkTitle, ListItem } from '../ListLink';
 import { ContentListItem } from '../types';
 
 const StyledContentList = styled('ul', {
@@ -19,37 +20,6 @@ const StyledContentList = styled('ul', {
   '@lg': {
     gridTemplateColumns: 'repeat(3, 1fr)',
   },
-});
-
-const ListItem = styled('li', {
-  all: 'unset',
-  position: 'relative',
-});
-
-const StyledLinkIcon = styled('div', {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-});
-
-type LinkIconProps = { children: React.ReactElement };
-
-const LinkIcon: React.VFC<LinkIconProps> = ({ children }) => {
-  const StyledChildren = React.cloneElement(children, { size: 48 });
-  return <StyledLinkIcon>{StyledChildren}</StyledLinkIcon>;
-};
-
-const LinkTitle = styled('div', {
-  fontWeight: 900,
-  lineHeight: 1.2,
-  color: '$hiContrast',
-});
-
-const LinkText = styled('p', {
-  all: 'unset',
-  lineHeight: 1.4,
-  fontWeight: 500,
-  color: '$slate11',
 });
 
 type ContentListProps = {
