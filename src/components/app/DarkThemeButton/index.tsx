@@ -7,8 +7,11 @@ export const DarkThemeButton = () => {
   const [, toggleTheme] = useToggleTheme();
 
   return (
-    <IconButton type="button" aria-label='toggle theme' onClick={toggleTheme}>
-      <FiSun size={28} />
-    </IconButton>
+    <IconButton
+      icon={<FiSun size={40} />}
+      type="button"
+      aria-label="toggle theme"
+      onClick={toggleTheme}
+    />
   );
 };

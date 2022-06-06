@@ -1,6 +1,7 @@
-import { styled } from 'stitches.config';
+import React from 'react';
+import { styled, VariantProps } from 'stitches.config';
 
-export const IconButton = styled('button', {
+const StyledIconButton = styled('button', {
   textDecoration: 'none',
   outline: 'none',
   userSelect: 'none',
@@ -84,3 +85,22 @@ export const IconButton = styled('button', {
     variant: 'contrast',
   },
 });
+
+type Props = VariantProps<typeof StyledIconButton> &
+  React.ComponentPropsWithoutRef<typeof StyledIconButton> & {
+    icon: React.ReactElement;
+  };
+
+export const IconButton = React.forwardRef<
+  React.ElementRef<typeof StyledIconButton>,
+  Props
+>(({ icon, ...props }, forwardedRef) => {
+  const newIcon = React.cloneElement(icon, { size: 48 });
+  return (
+    <StyledIconButton {...props} ref={forwardedRef}>
+      {newIcon}
+    </StyledIconButton>
+  );
+});
+
+IconButton.displayName = 'IconButton';

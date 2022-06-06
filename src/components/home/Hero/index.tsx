@@ -5,6 +5,7 @@ import App from './View';
 
 const Heading = styled('h2', {
   all: 'unset',
+  userSelect: 'none',
   display: 'block',
   fontWeight: 900,
   fontSize: 40,

@@ -38,7 +38,7 @@ export const Heading = React.forwardRef<
 >(({ children, text, icon }, forwardedRef) => {
   const newIcon = React.cloneElement(icon, { size: 48 });
   return (
-    <Box>
+    <Box css={{ userSelect: 'none' }}>
       <StyledSubHeading>---- {text} ----</StyledSubHeading>
       <StyledHeading ref={forwardedRef}>
         <StyledIcon>{newIcon}</StyledIcon>

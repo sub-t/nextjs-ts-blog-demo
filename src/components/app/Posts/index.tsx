@@ -30,7 +30,14 @@ const Post: React.VFC<{ post: Post }> = ({
             <Date>{formatDate(date)}</Date>
             <Badge text={category} />
           </HStack>
-          <Box css={{ fontWeight: 900, fontSize: 20, color: '$slate12' }}>
+          <Box
+            css={{
+              userSelect: 'none',
+              fontWeight: 900,
+              fontSize: 20,
+              color: '$slate12',
+            }}
+          >
             {title}
           </Box>
         </VStack>
