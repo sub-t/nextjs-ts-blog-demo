@@ -1,6 +1,6 @@
 import { FaJava, FaReact, FaUnity } from 'react-icons/fa';
 import { SiNextdotjs } from 'react-icons/si';
-import { ContentListItem } from '@/components/app/NavigationMenu/types';
+import { ContentListItem } from '@/components/app/Header/types';
 
 export const categoryList: ContentListItem[] = [
   {

@@ -1,11 +1,11 @@
-import { ContentList } from '@/components/app/NavigationMenu/ContentList';
+import { ContentList } from '@/components/app/Header/NavigationMenu/ContentList';
 import {
   NavigationMenu,
   NavigationMenuLinkItem,
   NavigationMenuTriggerItem,
 } from '@/components/common/NavigationMenu/index';
-import { categoryList } from './config/categoryList';
-import { tagList } from './config/tagList';
+import { categoryList } from '../config/categoryList';
+import { tagList } from '../config/tagList';
 
 export const Menu = () => {
   return (

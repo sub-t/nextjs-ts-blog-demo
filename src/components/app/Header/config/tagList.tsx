@@ -1,4 +1,4 @@
-import { ContentListItem } from '@/components/app/NavigationMenu/types';
+import { ContentListItem } from '@/components/app/Header/types';
 
 export const tagList: ContentListItem[] = [
   {

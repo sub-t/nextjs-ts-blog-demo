@@ -16,6 +16,7 @@ const StyledIconButton = styled('button', {
 
   // custom
   padding: 6,
+  backgroundColor: 'transparent',
 
   '&:disabled': {
     pointerEvents: 'none',
@@ -25,12 +26,14 @@ const StyledIconButton = styled('button', {
   variants: {
     size: {
       '1': {
-        borderRadius: 2,
         size: 32,
+        padding: 6,
+        borderRadius: 2,
       },
       '2': {
-        borderRadius: 4,
         size: 48,
+        padding: 10,
+        borderRadius: 4,
       },
     },
     round: {
@@ -43,14 +46,12 @@ const StyledIconButton = styled('button', {
     },
     variant: {
       contrast: {
-        backgroundColor: 'transparent',
         color: '$slate12',
         '&:focus': {
           boxShadow: '0 0 0 2px $colors$slate12',
         },
       },
       primary: {
-        backgroundColor: 'transparent',
         color: '$violet12',
         '&:focus': {
           boxShadow: '0 0 0 2px $colors$violet11',
@@ -63,6 +64,7 @@ const StyledIconButton = styled('button', {
       variant: 'contrast',
       float: 'true',
       css: {
+        bgColor: '$loContrast',
         boxShadow: '$colors$shadow1',
         '&:focus': {
           boxShadow: '$colors$shadow1, 0 0 0 2px $colors$slate7',
@@ -73,6 +75,7 @@ const StyledIconButton = styled('button', {
       variant: 'primary',
       float: 'true',
       css: {
+        bgColor: '$mauve1',
         boxShadow: '$colors$shadow1',
         '&:focus': {
           boxShadow: '$colors$shadow1, 0 0 0 2px $colors$violet7',
@@ -95,7 +98,7 @@ export const IconButton = React.forwardRef<
   React.ElementRef<typeof StyledIconButton>,
   Props
 >(({ icon, ...props }, forwardedRef) => {
-  const newIcon = React.cloneElement(icon, { size: 48 });
+  const newIcon = React.cloneElement(icon, { size: 99 });
   return (
     <StyledIconButton {...props} ref={forwardedRef}>
       {newIcon}

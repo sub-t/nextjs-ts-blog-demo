@@ -4,7 +4,7 @@ import { HighlightItem, HighlightList } from '@/components/animate/Highlight';
 import { VStack } from '@/components/common/Layout';
 import { NavigationMenuContentLink } from '@/components/common/NavigationMenu/NavigationMenuLink';
 import { styled } from 'stitches.config';
-import { ContentListItem } from './types';
+import { ContentListItem } from '../types';
 
 const StyledContentList = styled('ul', {
   all: 'unset',
