@@ -1,7 +1,7 @@
 import { styled } from 'stitches.config';
 
 export const Date = styled('span', {
-  fontSize: 16,
+  fontSize: 14,
   fontWeight: 500,
-  color: '$slate9',
+  color: '$violet11',
 });

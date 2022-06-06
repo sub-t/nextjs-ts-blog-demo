@@ -30,6 +30,6 @@ export const {
 export type { VariantProps } from '@stitches/react';
 export type CSS = Stitches.CSS<typeof config>;
 
-export const darkTheme = createTheme('dark-theme', {
+export const darkTheme = createTheme({
   ...darkThemeConfig,
 });

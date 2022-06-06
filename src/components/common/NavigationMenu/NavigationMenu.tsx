@@ -57,7 +57,7 @@ const StyledIndicator = styled(NavigationMenuPrimitive.Indicator, {
 const StyledArrow = styled('div', {
   position: 'relative',
   top: '70%',
-  backgroundColor: 'white',
+  backgroundColor: '$loContrast',
   width: 10,
   height: 10,
   transform: 'rotate(45deg)',
@@ -91,7 +91,7 @@ const StyledViewport = styled(NavigationMenuPrimitive.Viewport, {
   height: 'var(--radix-navigation-menu-viewport-height)',
 
   marginTop: 10,
-  backgroundColor: 'white',
+  backgroundColor: '$loContrast',
   borderRadius: 6,
   overflow: 'hidden',
   boxShadow: '$colors$shadow2',

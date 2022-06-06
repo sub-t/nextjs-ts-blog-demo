@@ -1,4 +1,5 @@
 import { VStack, Box } from '@/components/common/Layout';
+import { useToggleTheme } from '@/hooks/useToggleTheme';
 import { styled } from 'stitches.config';
 import App from './View';
 
@@ -13,9 +14,19 @@ const Heading = styled('h2', {
   lineHeight: 1.1,
   color: '$hiContrast',
   textTransform: 'uppercase',
+
+  variants: {
+    dark: {
+      true: {
+        color: '$loContrast',
+      },
+    },
+  },
 });
 
 export const Hero = () => {
+  const [theme] = useToggleTheme();
+
   return (
     <VStack align="center" css={{ overflow: 'hidden' }}>
       <Box css={{ position: 'relative', flex: 1, width: '100vw' }}>
@@ -28,9 +39,9 @@ export const Hero = () => {
             transform: 'translate3d(-50%, -50%, 0)',
           }}
         >
-          <Heading>
+          <Heading dark={theme === 'dark'}>
             website
-            <br/>
+            <br />
             under
             <br />
             construction

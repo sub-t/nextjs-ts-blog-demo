@@ -24,14 +24,16 @@ const Post: React.VFC<{ post: Post }> = ({
         boxShadow: '$colors$shadow1',
       }}
     >
-      <VStack gap="2">
-        <HStack align="center" gap="3">
-          <Date>{formatDate(date)}</Date>
-          <Badge text={category} />
-        </HStack>
-        <Box css={{ fontWeight: 900, fontSize: 20, color: '$slate12' }}>
-          {title}
-        </Box>
+      <VStack gap="4">
+        <VStack gap="2">
+          <HStack align="center" gap="3">
+            <Date>{formatDate(date)}</Date>
+            <Badge text={category} />
+          </HStack>
+          <Box css={{ fontWeight: 900, fontSize: 20, color: '$slate12' }}>
+            {title}
+          </Box>
+        </VStack>
         <Wrap align="center" gap="2">
           {tags.map((tag) => (
             <Tag key={tag} text={tag} />
