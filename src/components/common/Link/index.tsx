@@ -4,6 +4,7 @@ import { styled } from 'stitches.config';
 
 const Anchor = styled('a', {
   textDecoration: 'none',
+  color: 'inherit',
 });
 
 type Props = {
@@ -18,7 +19,7 @@ export const InnerLink: React.VFC<Props> = ({ href, children }) => (
 );
 
 export const OuterLink: React.VFC<Props> = ({ href, children }) => (
-  <a href={href} rel="noopener noreferrer" target="_blank">
+  <Anchor href={href} rel="noopener noreferrer" target="_blank">
     {children}
-  </a>
+  </Anchor>
 );

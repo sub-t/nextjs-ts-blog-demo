@@ -2,16 +2,37 @@
 
 .post {
   margin: var(--space-4) 0;
+  letter-spacing: 1.6818;
   font-size: 16px;
   font-weight: 500;
   color: var(--colors-slate12);
+}
+
+.post p {
+  margin-top: 0;
+  margin-bottom: 2.25rem;
 }
 
 .post a {
 }
 
 .post h2 {
-  font-size: 32px;
+  margin-bottom: 1.45em;
+  font-size: var(--fontSizes-6);
+  color: var(--colors-violet12);
+}
+
+.post h3 {
+  margin-top: 2em;
+  margin-bottom: 1.45em;
+  font-size: var(--fontSizes-5);
+  color: var(--colors-violet12);
+}
+
+.post h4 {
+  margin-bottom: 1em;
+  font-size: var(--fontSizes-4);
+  color: var(--colors-violet12);
 }
 
 .post ul + p {
@@ -39,5 +60,6 @@
 
 .remark-highlight pre {
   padding: 16px !important;
+  margin-bottom: 2.25rem;
   border-radius: 6px;
 }

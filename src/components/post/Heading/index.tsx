@@ -3,8 +3,8 @@ import { styled } from 'stitches.config';
 export const Heading = styled('h1', {
   all: 'unset',
   display: 'block',
-  fontSize: 40,
+  fontSize: '$7',
   fontWeight: 900,
   lineHeight: 1.2,
-  color: '$slate12',
+  color: '$violet12',
 });

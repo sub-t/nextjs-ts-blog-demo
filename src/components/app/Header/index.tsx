@@ -1,4 +1,5 @@
 import React from 'react';
+import { InnerLink } from '@/components/common/Link';
 import { useWindowSize } from '@/hooks/useWindowSize';
 import { styled } from 'stitches.config';
 import { Box, VStack, HStack } from '../../common/Layout';
@@ -50,7 +51,9 @@ const HeaderWithNavigationMenu = () => (
 
 const HeaderWithHamburgerMenu = () => (
   <HStack justify="between" align="center" css={{ p: 24 }}>
-    <Title hamburger>ブログのタイトル</Title>
+    <Title hamburger>
+      <InnerLink href="/">ブログのタイトル</InnerLink>
+    </Title>
     <DarkThemeButton />
     <HamburgerMenu />
   </HStack>

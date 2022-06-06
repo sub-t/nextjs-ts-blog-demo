@@ -2,6 +2,15 @@ export const others = {
   fonts: {
     mono: 'Söhne Mono, menlo, monospace',
   },
+  fontSizes: {
+    1: '14px',
+    2: '0.875rem',
+    3: '1rem',
+    4: '1.125rem',
+    5: '1.25rem',
+    6: '1.5rem',
+    7: '2rem'
+  },
   space: {
     1: '4px',
     2: '8px',
