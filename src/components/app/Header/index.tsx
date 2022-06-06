@@ -3,8 +3,8 @@ import { useWindowSize } from '@/hooks/useWindowSize';
 import { styled } from 'stitches.config';
 import { Box, VStack, HStack } from '../../common/Layout';
 import { DarkThemeButton } from '../DarkThemeButton';
-import { IconGroup } from './IconGroup';
 import { HamburgerMenu } from './HamburgerMenu';
+import { IconGroup } from './IconGroup';
 import { Menu } from './NavigationMenu';
 
 const Title = styled('h1', {
