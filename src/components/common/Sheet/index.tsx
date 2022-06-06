@@ -137,7 +137,7 @@ export const SheetContent = React.forwardRef<
   <StyledContent {...props} ref={forwardedRef}>
     {children}
     <StyledCloseButton asChild>
-      <IconButton type="button" aria-label="close" icon={<Cross1Icon />} />
+      <IconButton aria-label="close" icon={<Cross1Icon />} />
     </StyledCloseButton>
   </StyledContent>
 ));

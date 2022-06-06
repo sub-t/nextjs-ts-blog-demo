@@ -11,12 +11,12 @@ export const Menu = () => {
   return (
     <NavigationMenu>
       <NavigationMenuLinkItem href="/" inner>
-        ホーム
+        Home
       </NavigationMenuLinkItem>
-      <NavigationMenuTriggerItem title="カテゴリー">
+      <NavigationMenuTriggerItem title="Category">
         <ContentList contentList={categoryList} />
       </NavigationMenuTriggerItem>
-      <NavigationMenuTriggerItem title="タグ">
+      <NavigationMenuTriggerItem title="Tag">
         <ContentList contentList={tagList} />
       </NavigationMenuTriggerItem>
     </NavigationMenu>

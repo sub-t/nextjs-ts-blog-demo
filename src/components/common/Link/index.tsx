@@ -8,16 +8,17 @@ const Anchor = styled('a', {
 
 type Props = {
   href: string;
-  as?: string;
   children: React.ReactNode;
 };
 
-export const InnerLink: React.VFC<Props> = ({
-  href,
-  as,
-  children,
-}) => (
-  <Link href={href} as={as ?? href} passHref>
+export const InnerLink: React.VFC<Props> = ({ href, children }) => (
+  <Link href={href} passHref>
     <Anchor>{children}</Anchor>
   </Link>
+);
+
+export const OuterLink: React.VFC<Props> = ({ href, children }) => (
+  <a href={href} rel="noopener noreferrer" target="_blank">
+    {children}
+  </a>
 );

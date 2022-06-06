@@ -14,7 +14,6 @@ export const HamburgerMenu = () => (
       <Sheet>
         <SheetTrigger asChild>
           <IconButton
-            type="button"
             aria-label="hamburger menu"
             size="2"
             float
@@ -22,10 +21,10 @@ export const HamburgerMenu = () => (
           />
         </SheetTrigger>
         <SheetContent side="left">
-          <NavigationBarLabel>ホーム</NavigationBarLabel>
-          <NavigationBarLabel>カテゴリー</NavigationBarLabel>
+          <NavigationBarLabel>Home</NavigationBarLabel>
+          <NavigationBarLabel>Category</NavigationBarLabel>
           <ContentList contentList={categoryList} />
-          <NavigationBarLabel>タグ</NavigationBarLabel>
+          <NavigationBarLabel>Tag</NavigationBarLabel>
           <ContentList contentList={tagList} />
         </SheetContent>
       </Sheet>

@@ -9,7 +9,6 @@ export const DarkThemeButton = () => {
   return (
     <IconButton
       icon={<FiSun size={40} />}
-      type="button"
       aria-label="toggle theme"
       onClick={toggleTheme}
     />

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { AiTwotoneTag } from 'react-icons/ai';
 import { NavigationBarLink } from '@/components/common/NavigationBar';
 import { LinkIcon, ListItem } from '../ListLink';
 import { ContentListItem } from '../types';
@@ -15,7 +16,7 @@ export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
         <ListItem key={title}>
           <Link href={href} passHref>
             <NavigationBarLink>
-              {icon && <LinkIcon hamburger>{icon}</LinkIcon>}
+              <LinkIcon hamburger>{icon ?? <AiTwotoneTag />}</LinkIcon>
               {title}
             </NavigationBarLink>
           </Link>
