@@ -1,6 +1,6 @@
-import { ContentListItem } from '@/components/app/Header/types';
+import { ContentListItemType } from '@/components/app/Header/types';
 
-export const tagList: ContentListItem[] = [
+export const tagList: ContentListItemType[] = [
   {
     href: '/tag/React.js',
     title: 'React.js',

@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { HighlightItem, HighlightList } from '@/components/animate/Highlight';
+import { Icon } from '@/components/common/Icon';
 import { VStack } from '@/components/common/Layout';
 import { NavigationMenuContentLink } from '@/components/common/NavigationMenu/NavigationMenuLink';
+import { Heading } from '@/components/common/Text';
 import { styled } from 'stitches.config';
-import { LinkIcon, LinkText, LinkTitle, ListItem } from '../ListLink';
-import { ContentListItem } from '../types';
+import type { ContentListItemType } from '../types';
 
 const StyledContentList = styled('ul', {
   all: 'unset',
@@ -22,28 +23,44 @@ const StyledContentList = styled('ul', {
   },
 });
 
+type ContentListItemTypeProps = ContentListItemType & {
+  idx: number;
+};
+
+export const ContentListItem: React.VFC<ContentListItemTypeProps> = ({
+  href,
+  icon,
+  title,
+  text,
+  idx,
+}) => (
+  <HighlightItem as="li" id={idx}>
+    <Link href={href} passHref>
+      <NavigationMenuContentLink>
+        {icon && <Icon size="4">{icon}</Icon>}
+        <VStack gap="1">
+          <Heading as="div" css={{ lineHeight: 1.4 }}>
+            {title}
+          </Heading>
+          <Heading as="p" size="2" css={{ lineHeight: 1.2, color: '$slate11' }}>
+            {text}
+          </Heading>
+        </VStack>
+      </NavigationMenuContentLink>
+    </Link>
+  </HighlightItem>
+);
+
 type ContentListProps = {
-  contentList: ContentListItem[];
+  contentList: ContentListItemType[];
 };
 
 export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
   return (
     <HighlightList id="ContentList">
       <StyledContentList>
-        {contentList.map(({ href, icon, title, text }, idx) => (
-          <ListItem key={idx}>
-            <HighlightItem id={idx}>
-              <Link href={href} passHref>
-                <NavigationMenuContentLink>
-                  {icon && <LinkIcon>{icon}</LinkIcon>}
-                  <VStack gap="1">
-                    <LinkTitle>{title}</LinkTitle>
-                    <LinkText>{text}</LinkText>
-                  </VStack>
-                </NavigationMenuContentLink>
-              </Link>
-            </HighlightItem>
-          </ListItem>
+        {contentList.map((content, idx) => (
+          <ContentListItem key={idx} {...content} idx={idx} />
         ))}
       </StyledContentList>
     </HighlightList>

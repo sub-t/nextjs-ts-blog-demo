@@ -1,7 +1,8 @@
 import React from 'react';
-import { css, styled, VariantProps } from 'stitches.config';
+import { styled, VariantProps } from 'stitches.config';
+import { Icon } from '../Icon';
 
-export const iconButtonStyle = css({
+const StyledIconButton = styled('button', {
   textDecoration: 'none',
   outline: 'none',
   userSelect: 'none',
@@ -27,12 +28,10 @@ export const iconButtonStyle = css({
     size: {
       '1': {
         size: 32,
-        padding: 6,
         borderRadius: 2,
       },
       '2': {
         size: 48,
-        padding: 10,
         borderRadius: 4,
       },
     },
@@ -46,9 +45,9 @@ export const iconButtonStyle = css({
     },
     variant: {
       contrast: {
-        color: '$slate12',
+        color: '$hiContrast',
         '&:focus': {
-          boxShadow: '0 0 0 2px $colors$slate12',
+          boxShadow: '0 0 0 2px $colors$hiContrast',
         },
       },
       primary: {
@@ -67,7 +66,7 @@ export const iconButtonStyle = css({
         bgColor: '$loContrast',
         boxShadow: '$colors$shadow1',
         '&:focus': {
-          boxShadow: '$colors$shadow1, 0 0 0 2px $colors$slate7',
+          boxShadow: '$colors$shadow1, 0 0 0 2px currentColor',
         },
       },
     },
@@ -78,7 +77,7 @@ export const iconButtonStyle = css({
         bgColor: '$mauve1',
         boxShadow: '$colors$shadow1',
         '&:focus': {
-          boxShadow: '$colors$shadow1, 0 0 0 2px $colors$violet7',
+          boxShadow: '$colors$shadow1, 0 0 0 2px currentColor',
         },
       },
     },
@@ -89,8 +88,6 @@ export const iconButtonStyle = css({
   },
 });
 
-const StyledIconButton = styled('button', iconButtonStyle);
-
 type Props = VariantProps<typeof StyledIconButton> &
   React.ComponentPropsWithoutRef<typeof StyledIconButton> & {
     icon: React.ReactElement;
@@ -100,10 +97,9 @@ export const IconButton = React.forwardRef<
   React.ElementRef<typeof StyledIconButton>,
   Props
 >(({ icon, ...props }, forwardedRef) => {
-  const newIcon = React.cloneElement(icon, { size: 99 });
   return (
     <StyledIconButton type="button" {...props} ref={forwardedRef}>
-      {newIcon}
+      <Icon size="2">{icon}</Icon>
     </StyledIconButton>
   );
 });

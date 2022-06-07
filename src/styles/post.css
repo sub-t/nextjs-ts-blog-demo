@@ -3,7 +3,7 @@
 .post {
   margin: var(--space-4) 0;
   letter-spacing: 1.6818;
-  font-size: 16px;
+  font-size: var(--fontSizes-3);
   font-weight: 500;
   color: var(--colors-slate12);
 }

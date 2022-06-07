@@ -1,4 +1,4 @@
-export type ContentListItem = {
+export type ContentListItemType = {
   href: string;
   icon?: React.ReactElement;
   title: string;

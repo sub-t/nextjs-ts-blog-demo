@@ -1,30 +1,12 @@
 import React from 'react';
 import { InnerLink } from '@/components/common/Link';
+import { Heading } from '@/components/common/Text';
 import { useWindowSize } from '@/hooks/useWindowSize';
-import { styled } from 'stitches.config';
 import { Box, VStack, HStack } from '../../common/Layout';
 import { DarkThemeButton } from '../DarkThemeButton';
 import { HamburgerMenu } from './HamburgerMenu';
 import { IconGroup } from './IconGroup';
 import { Menu } from './NavigationMenu';
-
-const Title = styled('h1', {
-  all: 'unset',
-  userSelect: 'none',
-  display: 'flex',
-  justifyContent: 'center',
-  fontSize: 40,
-  fontWeight: 600,
-  color: '$hiContrast',
-
-  variants: {
-    hamburger: {
-      true: {
-        fontSize: 32,
-      },
-    },
-  },
-});
 
 type Props = {
   className?: string;
@@ -38,7 +20,7 @@ const HeaderWithNavigationMenu = () => (
           <IconGroup />
         </HStack>
         <VStack gap="2">
-          <Title>ブログのタイトル</Title>
+          <Heading size="8">ブログのタイトル</Heading>
           <Menu />
         </VStack>
         <HStack justify="center" css={{ flex: 1 }}>
@@ -51,9 +33,9 @@ const HeaderWithNavigationMenu = () => (
 
 const HeaderWithHamburgerMenu = () => (
   <HStack justify="between" align="center" css={{ p: 24 }}>
-    <Title hamburger>
+    <Heading size="7">
       <InnerLink href="/">ブログのタイトル</InnerLink>
-    </Title>
+    </Heading>
     <DarkThemeButton />
     <HamburgerMenu />
   </HStack>

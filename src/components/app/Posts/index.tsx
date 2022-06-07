@@ -5,6 +5,7 @@ import { Date } from '@/components/common/Date';
 import { Box, Grid, HStack, VStack, Wrap } from '@/components/common/Layout';
 import { InnerLink } from '@/components/common/Link';
 import { Tag } from '@/components/common/Tag';
+import { Heading } from '@/components/common/Text';
 import { Post } from '@/types';
 import { formatDate } from '@/utils/format';
 
@@ -30,16 +31,14 @@ const Post: React.VFC<{ post: Post }> = ({
             <Date>{formatDate(date)}</Date>
             <Badge text={category} />
           </HStack>
-          <Box
+          <Heading
+            size="5"
             css={{
               userSelect: 'none',
-              fontWeight: 900,
-              fontSize: 20,
-              color: '$slate12',
             }}
           >
             {title}
-          </Box>
+          </Heading>
         </VStack>
         <Wrap align="center" gap="2">
           {tags.map((tag) => (

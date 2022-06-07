@@ -15,16 +15,19 @@ type HighlightItemProps = {
   children: React.ReactNode;
   id: number;
   css?: CSS;
+  as?: React.ElementType
 };
 
 export const HighlightItem: React.VFC<HighlightItemProps> = ({
   children,
   id,
   css,
+  as
 }) => {
   const { hovered, setHover } = React.useContext(HoverContext);
   return (
     <Box
+      as={as}
       css={{ position: 'relative' }}
       onFocus={() => setHover(id)}
       onMouseEnter={() => setHover(id)}

@@ -119,8 +119,8 @@ const StyledCloseButton = styled(DialogPrimitive.Close, {
   position: 'absolute',
 
   // custom
-  top: 8,
-  right: 8,
+  top: '$2',
+  right: '$2',
 });
 
 type SheetContentVariants = VariantProps<typeof StyledContent>;

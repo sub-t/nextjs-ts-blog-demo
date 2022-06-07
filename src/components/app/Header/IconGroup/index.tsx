@@ -1,18 +1,24 @@
 import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { IconButton } from '@/components/common/IconButton';
+import { Icon } from '@/components/common/Icon';
 import { Wrap } from '@/components/common/Layout';
 import { OuterLink } from '@/components/common/Link';
 
 export const IconGroup = () => (
-  <Wrap gap="2">
+  <Wrap gap="5">
     <OuterLink href="https://github.com/">
-      <IconButton aria-label="github" icon={<FaGithub />} />
+      <Icon size="2">
+        <FaGithub />
+      </Icon>
     </OuterLink>
     <OuterLink href="https://github.com/">
-      <IconButton aria-label="twitter" icon={<FaTwitter />} />
+      <Icon size="2">
+        <FaTwitter />
+      </Icon>
     </OuterLink>
     <OuterLink href="https://github.com/">
-      <IconButton aria-label="instagram" icon={<FaInstagram />} />
+      <Icon size="2">
+        <FaInstagram />
+      </Icon>
     </OuterLink>
   </Wrap>
 );

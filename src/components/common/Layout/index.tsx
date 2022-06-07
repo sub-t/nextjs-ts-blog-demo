@@ -1,23 +1,24 @@
 import { styled } from 'stitches.config';
 import { flexStyles } from './flexStyles';
+import { reset } from './reset';
 
-export const Box = styled('div', {});
+export const Box = styled('div', reset);
 
-export const HStack = styled('div', {
+export const HStack = styled(Box, {
   ...flexStyles,
 });
 
-export const VStack = styled('div', {
+export const VStack = styled(Box, {
   ...flexStyles,
   flexDirection: 'column',
 });
 
-export const Wrap = styled('div', {
+export const Wrap = styled(Box, {
   ...flexStyles,
   flexWrap: 'wrap',
 });
 
-export const Grid = styled('div', {
+export const Grid = styled(Box, {
   display: 'grid',
 
   variants: {

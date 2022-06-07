@@ -1,8 +1,8 @@
 import { FaJava, FaReact, FaUnity } from 'react-icons/fa';
 import { SiNextdotjs } from 'react-icons/si';
-import { ContentListItem } from '@/components/app/Header/types';
+import { ContentListItemType } from '@/components/app/Header/types';
 
-export const categoryList: ContentListItem[] = [
+export const categoryList: ContentListItemType[] = [
   {
     href: '/category/React.js',
     icon: <FaReact />,

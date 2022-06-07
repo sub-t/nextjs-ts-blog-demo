@@ -11,8 +11,8 @@ import { Badge } from '@/components/common/Badge';
 import { Date } from '@/components/common/Date';
 import { HStack, VStack, Wrap } from '@/components/common/Layout';
 import { Tag } from '@/components/common/Tag';
+import { Heading } from '@/components/common/Text';
 import { Contents } from '@/components/post/Contents';
-import { Heading } from '@/components/post/Heading';
 import { PostContent } from '@/components/post/PostContent';
 import { APP_NAME, APP_URL } from '@/config';
 import { formatDate } from '@/utils/format';
@@ -65,7 +65,9 @@ const View: NextPageWithLayout<
               <Date>{formatDate(date)}</Date>
               <Badge text={category} href={`/category/${category}/`} />
             </HStack>
-            <Heading>{title}</Heading>
+            <Heading size="7" color="violet" css={{ lineHeight: 1.2 }}>
+              {title}
+            </Heading>
           </VStack>
           <Wrap align="center" gap="2">
             {tags.map((tag) => (

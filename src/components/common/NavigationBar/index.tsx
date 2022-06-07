@@ -1,43 +1,21 @@
 import React from 'react';
-import { styled, css, CSS } from 'stitches.config';
+import { styled, CSS } from 'stitches.config';
+import { itemStyles } from './style';
 
 export const NavigationBar = styled('nav', {
   overflow: 'hidden',
   width: '100%',
 });
 
-export const NavigationBarList = styled('ul', {
-  all: 'unset',
-});
-
-const baseLinkCss = css({
-  boxSizing: 'border-box',
-  userSelect: 'none',
-  overflow: 'hidden',
-  display: 'flex',
-  alignItems: 'center',
-  alignLinks: 'center',
-  fontFamily: '$untitled',
-  lineHeight: 1,
-  cursor: 'pointer',
-  width: '100%',
-
-  // custom
-  gap: '$4',
-  padding: '12px 24px',
-  fontSize: 16,
-  fontWeight: 500,
-  fontVariantNumeric: 'tabular-nums',
-});
-
-export const NavigationBarLabel = styled('div', baseLinkCss, {
+export const NavigationBarLabel = styled('li', itemStyles, {
   // custom
   color: '$mauve11',
   my: '$2',
 });
 
-const StyledNavigationBarLink = styled('a', baseLinkCss, {
+const StyledNavigationBarLink = styled('a', itemStyles, {
   textDecoration: 'none',
+  cursor: 'pointer',
 
   // custom
   color: '$violet11',

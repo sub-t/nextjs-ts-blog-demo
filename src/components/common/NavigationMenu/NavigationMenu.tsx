@@ -23,8 +23,7 @@ const scaleOut = keyframes({
 });
 
 const StyledMenu = styled(NavigationMenuPrimitive.Root, {
-  // TODO: headerと同じ値にして
-  zIndex: 1,
+  zIndex: '$sticky',
   position: 'relative',
 });
 

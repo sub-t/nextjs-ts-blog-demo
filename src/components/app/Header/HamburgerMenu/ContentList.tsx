@@ -1,26 +1,27 @@
 import React from 'react';
 import Link from 'next/link';
 import { AiTwotoneTag } from 'react-icons/ai';
+import { Icon } from '@/components/common/Icon';
+import { Box } from '@/components/common/Layout';
 import { NavigationBarLink } from '@/components/common/NavigationBar';
-import { LinkIcon, ListItem } from '../ListLink';
-import { ContentListItem } from '../types';
+import { ContentListItemType } from '../types';
 
 type ContentListProps = {
-  contentList: ContentListItem[];
+  contentList: ContentListItemType[];
 };
 
 export const ContentList: React.VFC<ContentListProps> = ({ contentList }) => {
   return (
     <>
       {contentList.map(({ href, icon, title }) => (
-        <ListItem key={title}>
+        <Box as="li" key={title}>
           <Link href={href} passHref>
             <NavigationBarLink>
-              <LinkIcon hamburger>{icon ?? <AiTwotoneTag />}</LinkIcon>
+              <Icon size="3">{icon ?? <AiTwotoneTag />}</Icon>
               {title}
             </NavigationBarLink>
           </Link>
-        </ListItem>
+        </Box>
       ))}
     </>
   );
