@@ -10,12 +10,12 @@ export const IconGroup = () => (
         <FaGithub />
       </Icon>
     </OuterLink>
-    <OuterLink href="https://github.com/">
+    <OuterLink href="https://twitter.com/">
       <Icon size="2">
         <FaTwitter />
       </Icon>
     </OuterLink>
-    <OuterLink href="https://github.com/">
+    <OuterLink href="https://www.instagram.com/">
       <Icon size="2">
         <FaInstagram />
       </Icon>

@@ -17,7 +17,7 @@ tags:
 ```
 
 #### Keyframes
-配列で指定するとこで、keyframesを使える。`transition`propの`times`から、タイミングを指定することも可能。
+配列で指定することで、keyframesを使える。`transition`propの`times`から、タイミングを指定することも可能。
 ```js
 <motion.circle
   cx={500}

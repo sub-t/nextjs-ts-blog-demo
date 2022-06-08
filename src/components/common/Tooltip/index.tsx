@@ -12,7 +12,7 @@ const StyledContent = styled(TooltipPrimitive.Content, {
   lineHeight: 1,
 
   // custom
-  padding: '4px 8px',
+  padding: '6px 8px',
   borderRadius: 4,
   fontSize: 13,
   fontWeight: 500,
@@ -59,7 +59,7 @@ export const Tooltip: React.VFC<TooltipProps> = ({
       delayDuration={100}
     >
       <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
-      <StyledContent side="bottom" align="center" sideOffset={0} {...props}>
+      <StyledContent side="bottom" align="center" sideOffset={8} {...props}>
         {content}
       </StyledContent>
     </TooltipPrimitive.Root>
