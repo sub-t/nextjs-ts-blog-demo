@@ -11,8 +11,9 @@ export const itemStyles = css({
   cursor: 'pointer',
 
   // custom
+  gap: 24,
   padding: '12px 16px',
-  borderRadius: 9999,
+  borderRadius: 6,
   fontWeight: 900,
   fontSize: 15,
   color: '$hiContrast',
@@ -20,5 +21,13 @@ export const itemStyles = css({
   '&:focus': {
     position: 'relative',
     boxShadow: '0 0 0 2px $colors$hiContrast',
+  },
+
+  variants: {
+    round: {
+      true: {
+        borderRadius: 9999,
+      },
+    },
   },
 });

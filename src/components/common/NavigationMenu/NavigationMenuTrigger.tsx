@@ -2,7 +2,7 @@ import React from 'react';
 import { CaretDownIcon } from '@radix-ui/react-icons';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { styled, keyframes } from 'stitches.config';
-import { itemStyles } from './baseStyles';
+import { itemStyles } from './styles';
 
 const enter = keyframes({
   from: { transform: 'translateX($$value)', opacity: 0 },
@@ -58,7 +58,7 @@ export const NavigationMenuTriggerItem = React.forwardRef<
   NavigationMenuTriggerItemProps
 >(({ children, title }, forwardedRef) => (
   <StyledNavigationMenuItem ref={forwardedRef}>
-    <StyledTrigger>
+    <StyledTrigger round>
       {title}
       <StyledCaret aria-hidden />
     </StyledTrigger>

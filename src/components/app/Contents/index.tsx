@@ -15,7 +15,7 @@ export const Contents: React.VFC<Props> = ({ children, className }) => {
           w: '100%',
           maxW: 1264,
           mx: 32,
-          mt: 48,
+          my: 48,
         }}
       >
         {children}

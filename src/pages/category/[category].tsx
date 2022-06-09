@@ -6,6 +6,7 @@ import type {
   InferGetStaticPropsType,
 } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { BiCategoryAlt } from 'react-icons/bi';
 import { Heading } from '@/components/app/Heading';
 import { Posts } from '@/components/app/Posts';
@@ -47,7 +48,9 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </Heading>
         <Wrap gap="2">
           {tags.map((tag) => (
-            <Tag key={tag} href={`/tag/${tag}`} text={tag} />
+            <Link key={tag} href={`/tag/${tag}`} passHref>
+              <Tag>{tag}</Tag>
+            </Link>
           ))}
         </Wrap>
       </VStack>

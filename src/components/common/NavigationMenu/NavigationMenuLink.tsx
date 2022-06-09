@@ -2,22 +2,9 @@ import React from 'react';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import { styled } from 'stitches.config';
-import { itemStyles } from './baseStyles';
+import { itemStyles } from './styles';
 
-export const NavigationMenuContentLink = styled(
-  NavigationMenuPrimitive.Link,
-  itemStyles,
-  {
-    textDecoration: 'none',
-
-    // custom
-    gap: 24,
-    padding: 12,
-    borderRadius: 6,
-  },
-);
-
-const NavigationMenuLink = styled(NavigationMenuPrimitive.Link, itemStyles, {
+export const NavigationMenuLink = styled(NavigationMenuPrimitive.Link, itemStyles, {
   textDecoration: 'none',
 });
 
@@ -36,10 +23,10 @@ export const NavigationMenuLinkItem = React.forwardRef<
   <StyledNavigationMenuItem ref={forwardedRef}>
     {inner ? (
       <Link href={href} passHref>
-        <NavigationMenuLink>{children}</NavigationMenuLink>
+        <NavigationMenuLink round>{children}</NavigationMenuLink>
       </Link>
     ) : (
-      <NavigationMenuLink href={href}>{children}</NavigationMenuLink>
+      <NavigationMenuLink href={href} round>{children}</NavigationMenuLink>
     )}
   </StyledNavigationMenuItem>
 ));

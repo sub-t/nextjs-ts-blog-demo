@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { HighlightItem, HighlightList } from '@/components/animate/Highlight';
 import { Icon } from '@/components/common/Icon';
 import { Grid, VStack } from '@/components/common/Layout';
-import { NavigationMenuContentLink } from '@/components/common/NavigationMenu/NavigationMenuLink';
+import { NavigationMenuLink } from '@/components/common/NavigationMenu';
 import { Heading, Text } from '@/components/common/Text';
 import type { ContentListItemType } from '../types';
 
@@ -20,7 +20,7 @@ export const ContentListItem: React.VFC<ContentListItemTypeProps> = ({
 }) => (
   <HighlightItem as="li" id={idx}>
     <Link href={href} passHref>
-      <NavigationMenuContentLink>
+      <NavigationMenuLink>
         {icon && <Icon size="4">{icon}</Icon>}
         <VStack gap="1">
           <Heading as="div" size="2" css={{ lineHeight: 1.4 }}>
@@ -30,7 +30,7 @@ export const ContentListItem: React.VFC<ContentListItemTypeProps> = ({
             {text}
           </Text>
         </VStack>
-      </NavigationMenuContentLink>
+      </NavigationMenuLink>
     </Link>
   </HighlightItem>
 );

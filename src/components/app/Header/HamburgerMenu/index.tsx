@@ -28,14 +28,16 @@ export const HamburgerMenu = () => (
         </DialogTrigger>
         <DialogContent css={{ pt: 40 }}>
           <ScrollArea css={{ height: '70vh' }}>
-            <Box as="ul">
-              <NavigationBarLabel>Home</NavigationBarLabel>
-              <ContentListItem href="/" title="Home" icon={<SiHomeadvisor />} />
-              <NavigationBarLabel>Category</NavigationBarLabel>
-              <ContentList contentList={categoryList} />
-              <NavigationBarLabel>Tag</NavigationBarLabel>
-              <ContentList contentList={tagList} />
-            </Box>
+            <nav>
+              <Box as="ul">
+                <NavigationBarLabel>Home</NavigationBarLabel>
+                <ContentListItem href="/" title="Home" icon={<SiHomeadvisor />} />
+                <NavigationBarLabel>Category</NavigationBarLabel>
+                <ContentList contentList={categoryList} />
+                <NavigationBarLabel>Tag</NavigationBarLabel>
+                <ContentList contentList={tagList} />
+              </Box>
+            </nav>
           </ScrollArea>
         </DialogContent>
       </Dialog>

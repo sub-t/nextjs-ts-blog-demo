@@ -1,11 +1,5 @@
-import React from 'react';
-import { styled, CSS } from 'stitches.config';
+import { styled } from 'stitches.config';
 import { itemStyles } from './style';
-
-export const NavigationBar = styled('nav', {
-  overflow: 'hidden',
-  width: '100%',
-});
 
 export const NavigationBarLabel = styled('li', itemStyles, {
   // custom
@@ -13,7 +7,7 @@ export const NavigationBarLabel = styled('li', itemStyles, {
   my: '$2',
 });
 
-const StyledNavigationBarLink = styled('a', itemStyles, {
+export const NavigationBarLink = styled('a', itemStyles, {
   textDecoration: 'none',
   cursor: 'pointer',
 
@@ -32,20 +26,3 @@ const StyledNavigationBarLink = styled('a', itemStyles, {
     color: '$mauve8',
   },
 });
-
-type NavigationBarLinkProps = React.ComponentPropsWithoutRef<
-  typeof StyledNavigationBarLink
-> & {
-  css?: CSS;
-};
-
-export const NavigationBarLink = React.forwardRef<
-  React.ElementRef<typeof StyledNavigationBarLink>,
-  NavigationBarLinkProps
->(({ children, ...props }, forwardedRef) => (
-  <StyledNavigationBarLink {...props} ref={forwardedRef}>
-    {children}
-  </StyledNavigationBarLink>
-));
-
-NavigationBarLink.displayName = 'NavigationBarLink';

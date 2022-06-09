@@ -18,7 +18,6 @@ const Post: React.VFC<{ post: Post }> = ({
       css={{
         boxSizing: 'border-box',
         position: 'relative',
-        h: '100%',
         p: 20,
         borderRadius: 6,
         bgColor: '$loContrast',
@@ -29,7 +28,7 @@ const Post: React.VFC<{ post: Post }> = ({
         <VStack gap="2">
           <HStack align="center" gap="3">
             <Date>{formatDate(date)}</Date>
-            <Badge text={category} />
+            <Badge>{category}</Badge>
           </HStack>
           <Heading
             size="5"
@@ -42,7 +41,7 @@ const Post: React.VFC<{ post: Post }> = ({
         </VStack>
         <Wrap align="center" gap="2">
           {tags.map((tag) => (
-            <Tag key={tag} text={tag} />
+            <Tag key={tag}>{tag}</Tag>
           ))}
         </Wrap>
       </VStack>

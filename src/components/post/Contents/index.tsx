@@ -1,13 +1,4 @@
-import { HStack } from '@/components/common/Layout';
-import { styled } from 'stitches.config';
-
-const Container = styled('div', {
-  boxSizing: 'border-box',
-  w: '100%',
-  maxW: 784,
-  mx: 32,
-  mt: 48,
-});
+import { Box, HStack } from '@/components/common/Layout';
 
 type Props = {
   children: React.ReactNode;
@@ -17,7 +8,17 @@ type Props = {
 export const Contents: React.VFC<Props> = ({ children, className }) => {
   return (
     <HStack className={className} justify="center">
-      <Container>{children}</Container>
+      <Box
+        css={{
+          boxSizing: 'border-box',
+          w: '100%',
+          maxW: 784,
+          mx: 32,
+          mt: 48,
+        }}
+      >
+        {children}
+      </Box>
     </HStack>
   );
 };

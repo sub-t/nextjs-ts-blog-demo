@@ -1,9 +1,6 @@
-import React from 'react';
-import { AiTwotoneTag } from 'react-icons/ai';
 import { styled } from 'stitches.config';
-import { InnerLink } from '../Link';
 
-const StyledTag = styled('span', {
+export const Tag = styled('span', {
   userSelect: 'none',
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
@@ -25,20 +22,3 @@ const StyledTag = styled('span', {
   fontSize: 12,
   color: '$violet11',
 });
-
-type Props = { text: string; href?: string };
-
-export const Tag: React.VFC<Props> = ({ text, href }) =>
-  href ? (
-    <InnerLink href={href}>
-      <StyledTag>
-        <AiTwotoneTag />
-        {text}
-      </StyledTag>
-    </InnerLink>
-  ) : (
-    <StyledTag>
-      <AiTwotoneTag />
-      {text}
-    </StyledTag>
-  );

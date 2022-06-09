@@ -6,6 +6,7 @@ import {
   NextPageWithLayout,
 } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Header } from '@/components/app/Header';
 import { Badge } from '@/components/common/Badge';
 import { Date } from '@/components/common/Date';
@@ -63,7 +64,9 @@ const View: NextPageWithLayout<
           <VStack gap="3">
             <HStack align="center" gap="3">
               <Date>{formatDate(date)}</Date>
-              <Badge text={category} href={`/category/${category}/`} />
+              <Link href={`/category/${category}/`} passHref>
+                <Badge as="a">{category}</Badge>
+              </Link>
             </HStack>
             <Heading size="7" color="violet" css={{ lineHeight: 1.2 }}>
               {title}
@@ -71,7 +74,9 @@ const View: NextPageWithLayout<
           </VStack>
           <Wrap align="center" gap="2">
             {tags.map((tag) => (
-              <Tag key={tag} text={tag} href={`/tag/${tag}/`} />
+              <Link key={tag} href={`/tag/${tag}/`} passHref>
+                <Tag as="a">{tag}</Tag>
+              </Link>
             ))}
           </Wrap>
         </VStack>
