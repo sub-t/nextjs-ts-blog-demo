@@ -1,6 +1,6 @@
 import { Contents } from '@/components/app/Contents';
 import { Header } from '@/components/app/Header';
-import { Provider } from '@/provider';
+import { Provider } from '@/providers/app';
 import { globalCss } from 'stitches.config';
 import type { AppPropsWithLayout } from 'next/app';
 import '@/styles/app.css';
