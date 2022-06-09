@@ -1,5 +1,4 @@
 import { Portal } from '@radix-ui/react-portal';
-import Link from 'next/link';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { SiHomeadvisor } from 'react-icons/si';
 import {
@@ -7,17 +6,13 @@ import {
   DialogContent,
   DialogTrigger,
 } from '@/components/common/Dialog';
-import { Icon } from '@/components/common/Icon';
 import { IconButton } from '@/components/common/IconButton';
 import { Box } from '@/components/common/Layout';
-import {
-  NavigationBarLabel,
-  NavigationBarLink,
-} from '@/components/common/NavigationBar';
+import { NavigationBarLabel } from '@/components/common/NavigationBar';
 import { ScrollArea } from '@/components/common/ScrollArea';
 import { categoryList } from '../config/categoryList';
 import { tagList } from '../config/tagList';
-import { ContentList } from './ContentList';
+import { ContentList, ContentListItem } from './ContentList';
 
 export const HamburgerMenu = () => (
   <Portal>
@@ -35,16 +30,7 @@ export const HamburgerMenu = () => (
           <ScrollArea css={{ height: '70vh' }}>
             <Box as="ul">
               <NavigationBarLabel>Home</NavigationBarLabel>
-              <Box as="li">
-                <Link href="/" passHref>
-                  <NavigationBarLink>
-                    <Icon size="3">
-                      <SiHomeadvisor />
-                    </Icon>
-                    Home
-                  </NavigationBarLink>
-                </Link>
-              </Box>
+              <ContentListItem href="/" title="Home" icon={<SiHomeadvisor />} />
               <NavigationBarLabel>Category</NavigationBarLabel>
               <ContentList contentList={categoryList} />
               <NavigationBarLabel>Tag</NavigationBarLabel>

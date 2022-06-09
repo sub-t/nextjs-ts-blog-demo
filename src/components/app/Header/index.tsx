@@ -14,7 +14,7 @@ type Props = {
 
 const HeaderWithNavigationMenu = () => (
   <VStack align="center" css={{ p: '48px 24px' }}>
-    <Box css={{ boxSizing: 'border-box', w: '100%', maxW: 1200 }}>
+    <Box css={{ w: '100%', maxW: 1200 }}>
       <HStack justify="between" align="center">
         <HStack justify="center" css={{ flex: 1 }}>
           <IconGroup />

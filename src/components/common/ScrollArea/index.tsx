@@ -31,7 +31,7 @@ const StyledThumb = styled(ScrollAreaPrimitive.Thumb, {
   flex: 1,
 
   // custom
-  background: '$mauve10',
+  background: '$mauve6',
   borderRadius: SCROLLBAR_THICKNESS,
 
   // collision

@@ -52,19 +52,7 @@ const Post: React.VFC<{ post: Post }> = ({
 
 export const Posts: React.VFC<{ posts: Post[] }> = ({ posts }) => {
   return (
-    <Grid
-      gap="4"
-      css={{
-        gridAutoRows: 'max-content',
-        gridTemplateColumns: 'repeat(1, 1fr)',
-        '@md': {
-          gridTemplateColumns: 'repeat(2, 1fr)',
-        },
-        '@lg': {
-          gridTemplateColumns: 'repeat(3, 1fr)',
-        },
-      }}
-    >
+    <Grid gap="4" columns={{ '@initial': '1', '@md': '2', '@lg': '3' }}>
       {posts.map((post) => (
         <Enter key={post.title}>
           <Post post={post} />
