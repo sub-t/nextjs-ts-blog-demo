@@ -19,20 +19,20 @@
 .post h2 {
   margin-bottom: 1.45em;
   font-size: var(--fontSizes-6);
-  color: var(--colors-violet12);
+  color: var(--colors-slate12);
 }
 
 .post h3 {
   margin-top: 2em;
   margin-bottom: 1.45em;
   font-size: var(--fontSizes-5);
-  color: var(--colors-violet12);
+  color: var(--colors-slate12);
 }
 
 .post h4 {
   margin-bottom: 1em;
   font-size: var(--fontSizes-4);
-  color: var(--colors-violet12);
+  color: var(--colors-slate12);
 }
 
 .post ul + p {

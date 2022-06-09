@@ -9,8 +9,8 @@ import Head from 'next/head';
 import { BiCategoryAlt } from 'react-icons/bi';
 import { Heading } from '@/components/app/Heading';
 import { Posts } from '@/components/app/Posts';
+import { VStack, Wrap } from '@/components/common/Layout';
 import { Tag } from '@/components/common/Tag';
-import { TagGroup } from '@/components/tag/TagGroup';
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config';
 import { Post } from '@/types';
 import { getCategories } from '@/utils/getCategories';
@@ -41,14 +41,16 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <meta property="og:description" content={APP_DESCRIPTION} />
         <meta property="og:url" content={`${APP_URL}/category/${category}/`} />
       </Head>
-      <Heading icon={<BiCategoryAlt />} text="category">
-        {category}の記事
-      </Heading>
-      <TagGroup>
-        {tags.map((tag) => (
-          <Tag key={tag} href={`/tag/${tag}`} text={tag} />
-        ))}
-      </TagGroup>
+      <VStack gap="3">
+        <Heading icon={<BiCategoryAlt />} text="category">
+          {category}の記事
+        </Heading>
+        <Wrap gap="2">
+          {tags.map((tag) => (
+            <Tag key={tag} href={`/tag/${tag}`} text={tag} />
+          ))}
+        </Wrap>
+      </VStack>
       <Posts posts={posts} />
     </>
   );
