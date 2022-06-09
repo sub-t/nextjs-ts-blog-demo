@@ -18,6 +18,7 @@ const Post: React.VFC<{ post: Post }> = ({
       css={{
         boxSizing: 'border-box',
         position: 'relative',
+        h: '100%',
         p: 20,
         borderRadius: 6,
         bgColor: '$loContrast',
