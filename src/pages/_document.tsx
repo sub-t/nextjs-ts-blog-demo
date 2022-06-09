@@ -10,6 +10,7 @@ export default function Document() {
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
