@@ -12,8 +12,6 @@ const globalStyles = globalCss({
   },
   body: {
     bgColor: '$loContrast',
-    margin: 0,
-    padding: 0,
     fontFamily:
       'Yu Gothic, yugothic, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, メイリオ, meiryo, sans-serif',
   },

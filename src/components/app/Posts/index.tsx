@@ -31,14 +31,7 @@ const Post: React.VFC<{ post: Post }> = ({
             <Date>{formatDate(date)}</Date>
             <Badge>{category}</Badge>
           </HStack>
-          <Heading
-            size="5"
-            css={{
-              userSelect: 'none',
-            }}
-          >
-            {title}
-          </Heading>
+          <Heading size="5">{title}</Heading>
         </VStack>
         <Wrap align="center" gap="2">
           {tags.map((tag) => (
