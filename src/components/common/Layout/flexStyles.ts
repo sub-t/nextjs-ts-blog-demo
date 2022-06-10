@@ -1,5 +1,4 @@
 export const flexStyles = {
-  boxSizing: 'border-box',
   display: 'flex',
 
   variants: {

@@ -68,7 +68,7 @@ const View: NextPageWithLayout<
                 <Badge as="a">{category}</Badge>
               </Link>
             </HStack>
-            <Heading size="7" color="violet" css={{ lineHeight: 1.2 }}>
+            <Heading size="7" css={{ lineHeight: 1.2 }}>
               {title}
             </Heading>
           </VStack>

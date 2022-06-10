@@ -10,7 +10,6 @@ export const Contents: React.VFC<Props> = ({ children, className }) => {
     <HStack className={className} justify="center">
       <Box
         css={{
-          boxSizing: 'border-box',
           w: '100%',
           maxW: 784,
           mx: 32,

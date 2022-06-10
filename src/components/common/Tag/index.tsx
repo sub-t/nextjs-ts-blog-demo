@@ -3,7 +3,6 @@ import { styled } from 'stitches.config';
 export const Tag = styled('span', {
   userSelect: 'none',
   whiteSpace: 'nowrap',
-  boxSizing: 'border-box',
   fontFamily: 'inherit',
   flexShrink: 0,
   display: 'flex',

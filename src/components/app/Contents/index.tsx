@@ -11,7 +11,6 @@ export const Contents: React.VFC<Props> = ({ children, className }) => {
       <VStack
         gap="6"
         css={{
-          boxSizing: 'border-box',
           w: '100%',
           maxW: 1264,
           mx: 32,

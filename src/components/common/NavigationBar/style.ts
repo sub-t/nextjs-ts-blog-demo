@@ -1,7 +1,6 @@
 import { css } from 'stitches.config';
 
 export const itemStyles = css({
-  boxSizing: 'border-box',
   userSelect: 'none',
   overflow: 'hidden',
   display: 'flex',
