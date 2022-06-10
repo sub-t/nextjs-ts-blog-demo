@@ -1,8 +1,7 @@
 import { styled } from 'stitches.config';
 import { flexStyles } from './flexStyles';
-import { reset } from './reset';
 
-export const Box = styled('div', reset);
+export const Box = styled('div', {});
 
 export const HStack = styled(Box, {
   ...flexStyles,

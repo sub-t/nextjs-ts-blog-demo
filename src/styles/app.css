@@ -1,6 +1,11 @@
 @import url('./reset.css');
 @import url('./post.css');
 
+*::selection {
+  background: var(--colors-violet5);
+  color: var(--colors-violet12);
+}
+
 .global-layout {
   display: grid;
   grid-template: 'header' auto 'contents' 1fr 'footer' auto/100%;
