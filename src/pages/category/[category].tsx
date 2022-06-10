@@ -49,7 +49,7 @@ const View: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <Wrap gap="2">
           {tags.map((tag) => (
             <Link key={tag} href={`/tag/${tag}`} passHref>
-              <Tag>{tag}</Tag>
+              <Tag as="a">{tag}</Tag>
             </Link>
           ))}
         </Wrap>
