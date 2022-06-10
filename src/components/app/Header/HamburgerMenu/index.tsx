@@ -26,12 +26,16 @@ export const HamburgerMenu = () => (
             icon={<GiHamburgerMenu />}
           />
         </DialogTrigger>
-        <DialogContent css={{ pt: 40 }}>
+        <DialogContent css={{ maxW: '80vw', pt: 40 }}>
           <ScrollArea css={{ height: '70vh' }}>
             <nav>
               <Box as="ul">
                 <NavigationBarLabel>Home</NavigationBarLabel>
-                <ContentListItem href="/" title="Home" icon={<SiHomeadvisor />} />
+                <ContentListItem
+                  href="/"
+                  title="Home"
+                  icon={<SiHomeadvisor />}
+                />
                 <NavigationBarLabel>Category</NavigationBarLabel>
                 <ContentList contentList={categoryList} />
                 <NavigationBarLabel>Tag</NavigationBarLabel>
