@@ -16,13 +16,13 @@ export default function Document() {
           href="/static/favicons/apple-touch-icon.png"
         />
         <link
-          rel="icon"
+          rel="shortcut icon"
           type="image/png"
           sizes="32x32"
           href="/static/favicons/favicon-32x32.png"
         />
         <link
-          rel="icon"
+          rel="shortcut icon"
           type="image/png"
           sizes="16x16"
           href="/static/favicons/favicon-16x16.png"
