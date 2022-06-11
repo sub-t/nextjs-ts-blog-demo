@@ -35,6 +35,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Move 404 page to root directory
+        run: mv ./out/404/index.html ./out/404.html
+
       - name: add nojekyll
         run: touch ./out/.nojekyll
 
