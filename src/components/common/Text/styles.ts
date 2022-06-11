@@ -1,8 +1,6 @@
 import { css } from 'stitches.config';
 
 export const textStyles = css({
-  m: 0,
-  p: 0,
   fontWeight: 500,
 
   variants: {

@@ -12,11 +12,11 @@ import { Heading } from '@/components/app/Heading';
 import { Posts } from '@/components/app/Posts';
 import { VStack, Wrap } from '@/components/common/Layout';
 import { Tag } from '@/components/common/Tag';
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config';
-import { Post } from '@/types';
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config/app';
 import { getCategories } from '@/utils/getCategories';
 import { getPostsByCategory } from '@/utils/getPosts';
 import { getTags } from '@/utils/getTags';
+import type { Post } from '@/types/Post';
 
 type Props = {
   category: string;

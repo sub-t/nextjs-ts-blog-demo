@@ -9,10 +9,10 @@ import Head from 'next/head';
 import { BsHash } from 'react-icons/bs';
 import { Heading } from '@/components/app/Heading';
 import { Posts } from '@/components/app/Posts';
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config';
-import { Post } from '@/types';
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config/app';
 import { getPostsByTag } from '@/utils/getPosts';
 import { getTags } from '@/utils/getTags';
+import type { Post } from '@/types/Post';
 
 type Props = {
   tag: string;

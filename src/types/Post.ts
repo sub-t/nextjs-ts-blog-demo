@@ -10,6 +10,6 @@ export type Post = {
   month: string;
 
   slug: string;
-  
+
   content: string;
 };

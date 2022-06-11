@@ -6,8 +6,8 @@ import { Box, Grid, HStack, VStack, Wrap } from '@/components/common/Layout';
 import { InnerLink } from '@/components/common/Link';
 import { Tag } from '@/components/common/Tag';
 import { Heading } from '@/components/common/Text';
-import { Post } from '@/types';
 import { formatDate } from '@/utils/format';
+import type { Post } from '@/types/Post';
 
 const Post: React.VFC<{ post: Post }> = ({
   post: { slug, date, year, month, title, category, tags },

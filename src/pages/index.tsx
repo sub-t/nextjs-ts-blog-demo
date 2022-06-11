@@ -12,9 +12,9 @@ import { Heading } from '@/components/app/Heading';
 import { Posts } from '@/components/app/Posts';
 import { Grid } from '@/components/common/Layout';
 import { Hero } from '@/components/home/Hero';
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config';
-import { Post } from '@/types';
+import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config/app';
 import { getPosts } from '@/utils/getPosts';
+import type { Post } from '@/types/Post';
 
 type Props = {
   posts: Post[];

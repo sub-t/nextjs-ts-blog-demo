@@ -15,12 +15,12 @@ import { Tag } from '@/components/common/Tag';
 import { Heading } from '@/components/common/Text';
 import { Contents } from '@/components/post/Contents';
 import { PostContent } from '@/components/post/PostContent';
-import { APP_NAME, APP_URL } from '@/config';
+import { APP_NAME, APP_URL } from '@/config/app';
 import { formatDate } from '@/utils/format';
 import { getPostByPath, getPosts } from '@/utils/getPosts';
 import markdownToHtml from '@/utils/markdownToHtml';
 import { description } from '@/utils/meta';
-import type { Post } from '@/types';
+import type { Post } from '@/types/Post';
 
 type Props = {
   post: Post;

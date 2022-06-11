@@ -2,7 +2,7 @@ import { basename } from 'path';
 import matter from 'gray-matter';
 import { getContents, getBaseDirectory, getFiles } from './file';
 import { byDate } from './sortHelper';
-import type { Post } from '@/types';
+import type { Post } from '@/types/Post';
 
 export const getPostByPath = (path: string) => {
   return matter(getContents(`${getBaseDirectory()}/${path}`));
