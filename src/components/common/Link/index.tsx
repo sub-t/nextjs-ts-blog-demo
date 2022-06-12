@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 import { styled } from 'stitches.config';
 
 const Anchor = styled('a', {
@@ -7,19 +7,21 @@ const Anchor = styled('a', {
   color: 'inherit',
 });
 
-type Props = {
-  href: string;
-  children: React.ReactNode;
-};
+type AnchorProps = React.ComponentPropsWithRef<typeof Anchor>;
 
-export const InnerLink: React.VFC<Props> = ({ href, children }) => (
-  <Link href={href} passHref>
+type InnerLinkProps = AnchorProps & LinkProps;
+
+export const InnerLink: React.VFC<InnerLinkProps> = ({
+  children,
+  ...props
+}) => (
+  <Link {...props} passHref>
     <Anchor>{children}</Anchor>
   </Link>
 );
 
-export const OuterLink: React.VFC<Props> = ({ href, children }) => (
-  <Anchor href={href} rel="noopener noreferrer" target="_blank">
+export const OuterLink: React.VFC<AnchorProps> = ({ children, ...props }) => (
+  <Anchor {...props} rel="noopener noreferrer" target="_blank">
     {children}
   </Anchor>
 );
