@@ -6,6 +6,12 @@
   color: var(--colors-violet12);
 }
 
+body {
+  background-color: var(--colors-loContrast);
+  font-family: Yu Gothic, yugothic, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN,
+    メイリオ, meiryo, sans-serif;
+}
+
 .global-layout {
   display: grid;
   grid-template: 'header' auto 'contents' 1fr 'footer' auto/100%;
