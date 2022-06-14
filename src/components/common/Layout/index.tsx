@@ -3,55 +3,20 @@ import { flexStyles } from './flexStyles';
 
 export const Box = styled('div', {});
 
-export const HStack = styled(Box, {
-  ...flexStyles,
-});
+export const HStack = styled(Box, flexStyles);
 
-export const VStack = styled(Box, {
-  ...flexStyles,
+export const VStack = styled(Box, flexStyles, {
   flexDirection: 'column',
 });
 
-export const Wrap = styled(Box, {
-  ...flexStyles,
+export const Wrap = styled(Box, flexStyles, {
   flexWrap: 'wrap',
 });
 
-export const Grid = styled(Box, {
+export const Grid = styled(Box, flexStyles, {
   display: 'grid',
 
   variants: {
-    align: {
-      start: {
-        alignItems: 'start',
-      },
-      center: {
-        alignItems: 'center',
-      },
-      end: {
-        alignItems: 'end',
-      },
-      stretch: {
-        alignItems: 'stretch',
-      },
-      baseline: {
-        alignItems: 'baseline',
-      },
-    },
-    justify: {
-      start: {
-        justifyContent: 'start',
-      },
-      center: {
-        justifyContent: 'center',
-      },
-      end: {
-        justifyContent: 'end',
-      },
-      between: {
-        justifyContent: 'space-between',
-      },
-    },
     flow: {
       row: {
         gridAutoFlow: 'row',
@@ -81,35 +46,6 @@ export const Grid = styled(Box, {
       },
       4: {
         gridTemplateColumns: 'repeat(4, 1fr)',
-      },
-    },
-    gap: {
-      1: {
-        gap: '$1',
-      },
-      2: {
-        gap: '$2',
-      },
-      3: {
-        gap: '$3',
-      },
-      4: {
-        gap: '$4',
-      },
-      5: {
-        gap: '$5',
-      },
-      6: {
-        gap: '$6',
-      },
-      7: {
-        gap: '$7',
-      },
-      8: {
-        gap: '$8',
-      },
-      9: {
-        gap: '$9',
       },
     },
     gapX: {

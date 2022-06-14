@@ -1,4 +1,6 @@
-export const flexStyles = {
+import { css } from "stitches.config";
+
+export const flexStyles = css({
   display: 'flex',
 
   variants: {
@@ -71,4 +73,4 @@ export const flexStyles = {
     align: 'stretch',
     justify: 'start',
   },
-};
+});
