@@ -9,38 +9,43 @@ import { Heading } from '@/components/common/Text';
 import { formatDate } from '@/utils/format';
 import type { Post } from '@/types/Post';
 
-const Post: React.VFC<{ post: Post }> = ({
-  post: { slug, date, year, month, title, category, tags },
-}) => (
-  <InnerLink href={`/${year}/${month}/${slug}`}>
-    <Box
-      key={slug}
-      css={{
-        position: 'relative',
-        h: '100%',
-        p: 20,
-        borderRadius: 6,
-        bgColor: '$loContrast',
-        boxShadow: '$colors$shadow1',
-      }}
-    >
-      <VStack gap="4">
-        <VStack gap="2">
-          <HStack align="center" gap="3">
-            <Date>{formatDate(date)}</Date>
-            <Badge>{category}</Badge>
-          </HStack>
-          <Heading size="5">{title}</Heading>
+const Post = React.forwardRef<HTMLDivElement, { post: Post }>(
+  (
+    { post: { slug, date, year, month, title, category, tags } },
+    forwardedRef,
+  ) => (
+    <InnerLink href={`/${year}/${month}/${slug}`}>
+      <Box
+        ref={forwardedRef}
+        css={{
+          position: 'relative',
+          h: '100%',
+          p: 20,
+          borderRadius: 6,
+          bgColor: '$loContrast',
+          boxShadow: '$colors$shadow1',
+        }}
+      >
+        <VStack gap="4">
+          <VStack gap="2">
+            <HStack align="center" gap="3">
+              <Date>{formatDate(date)}</Date>
+              <Badge>{category}</Badge>
+            </HStack>
+            <Heading size="5">{title}</Heading>
+          </VStack>
+          <Wrap align="center" gap="2">
+            {tags.map((tag) => (
+              <Tag key={tag}>{tag}</Tag>
+            ))}
+          </Wrap>
         </VStack>
-        <Wrap align="center" gap="2">
-          {tags.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </Wrap>
-      </VStack>
-    </Box>
-  </InnerLink>
+      </Box>
+    </InnerLink>
+  ),
 );
+
+Post.displayName = 'Post';
 
 export const Posts: React.VFC<{ posts: Post[] }> = ({ posts }) => {
   return (

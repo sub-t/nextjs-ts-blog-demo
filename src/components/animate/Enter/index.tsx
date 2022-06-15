@@ -1,11 +1,8 @@
 import React from 'react';
+import { Slot } from '@radix-ui/react-slot';
 import { motion } from 'framer-motion';
-import { styled } from 'stitches.config';
 
-const Container = styled(motion.div, {
-  width: '100%',
-  height: '100%',
-});
+const Container = motion(Slot);
 
 type Config = {
   once?: boolean;
