@@ -9,7 +9,7 @@ import { Heading } from '@/components/common/Text';
 import { formatDate } from '@/utils/format';
 import type { Post } from '@/types/Post';
 
-const Post = React.forwardRef<HTMLDivElement, { post: Post }>(
+const Post = React.forwardRef<React.ElementRef<typeof Box>, { post: Post }>(
   (
     { post: { slug, date, year, month, title, category, tags } },
     forwardedRef,
